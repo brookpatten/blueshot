@@ -8,7 +8,7 @@ This feature allows users to automatically obfuscate text in screenshots by sear
 
 ### Accessing the Feature
 
-1. Capture or open a screenshot in the Greenshot Editor
+1. Capture or open a screenshot in the blueshot Editor
 2. Go to **Edit** → **Obfuscate Text...**
 3. The Text Obfuscation dialog will open
 
@@ -57,14 +57,14 @@ The Text Obfuscation dialog includes:
 
 ### Files Added
 
-- `src/Greenshot.Editor/Forms/TextObfuscationForm.cs` - Main form logic
-- `src/Greenshot.Editor/Forms/TextObfuscationForm.Designer.cs` - Form designer code
+- `src/blueshot.Editor/Forms/TextObfuscationForm.cs` - Main form logic
+- `src/blueshot.Editor/Forms/TextObfuscationForm.Designer.cs` - Form designer code
 
 ### Files Modified
 
-- `src/Greenshot.Editor/Forms/ImageEditorForm.cs` - Added menu item handler
-- `src/Greenshot.Editor/Forms/ImageEditorForm.Designer.cs` - Added menu item definition
-- `src/Greenshot/Languages/language-en-US.xml` - Added translation strings
+- `src/blueshot.Editor/Forms/ImageEditorForm.cs` - Added menu item handler
+- `src/blueshot.Editor/Forms/ImageEditorForm.Designer.cs` - Added menu item definition
+- `src/blueshot/Languages/language-en-US.xml` - Added translation strings
 
 ### Translation Keys
 
@@ -105,13 +105,13 @@ The following language keys were added to `language-en-US.xml`:
 ### Build Instructions
 
 1. Clone the repository
-2. Open `src/Greenshot.sln` in Visual Studio
+2. Open `src/blueshot.sln` in Visual Studio
 3. Build the solution (Configuration: Debug or Release)
 
 ### Manual Testing Steps
 
 1. **Basic Functionality**:
-   - Launch Greenshot
+   - Launch blueshot
    - Take a screenshot containing text
    - Open in editor
    - Go to Edit → Obfuscate Text

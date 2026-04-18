@@ -1,6 +1,6 @@
-# Greenshot Translation Glossary
+# blueshot Translation Glossary
 
-This glossary maintains consistent translations of Greenshot-specific terms across all languages. When translating, always refer to this glossary to ensure consistency.
+This glossary maintains consistent translations of blueshot-specific terms across all languages. When translating, always refer to this glossary to ensure consistency.
 
 ## How to Use This Glossary
 
@@ -23,7 +23,7 @@ Each entry should include:
 
 ### Screenshot / Screen Capture
 
-**Context**: The main purpose of Greenshot - capturing images of the screen
+**Context**: The main purpose of blueshot - capturing images of the screen
 
 | Language | Translation | Notes |
 |----------|-------------|-------|
@@ -290,11 +290,11 @@ Example:
 ```xml
 <!-- English -->
 <resource name="about_license">Copyright © 2004-2026 Thomas Braun, Jens Klingen, Robin Krom
-Greenshot comes with ABSOLUTELY NO WARRANTY. This is free software...</resource>
+blueshot comes with ABSOLUTELY NO WARRANTY. This is free software...</resource>
 
 <!-- German -->
 <resource name="about_license">Copyright © 2004-2026 Thomas Braun, Jens Klingen, Robin Krom
-Für Greenshot besteht KEINERLEI GARANTIE. Greenshot ist freie Software...</resource>
+Für blueshot besteht KEINERLEI GARANTIE. blueshot ist freie Software...</resource>
 ```
 
 ---

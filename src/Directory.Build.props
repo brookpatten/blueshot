@@ -1,11 +1,11 @@
 ﻿<Project>
   <PropertyGroup>
-    <Copyright>Copyright © Greenshot 2004-2026</Copyright>
-    <Authors>Greenshot</Authors>
-    <PackageIconUrl>https://getgreenshot.org/favicon.ico</PackageIconUrl>
-    <RepositoryUrl>https://github.com/greenshot/greenshot</RepositoryUrl>
+    <Copyright>Copyright © blueshot 2004-2026</Copyright>
+    <Authors>blueshot</Authors>
+    <PackageIconUrl>https://getblueshot.org/favicon.ico</PackageIconUrl>
+    <RepositoryUrl>https://github.com/blueshot/blueshot</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/greenshot/greenshot</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/blueshot/blueshot</PackageProjectUrl>
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
     <LangVersion>latest</LangVersion>
     <UseWPF>true</UseWPF>
@@ -51,7 +51,7 @@
     <DebugSymbols>True</DebugSymbols>
   </PropertyGroup>
 
-  <ItemGroup Condition="!$(MSBuildProjectName.Contains('Tests')) And $(MSBuildProjectName.StartsWith('Greenshot'))">
+  <ItemGroup Condition="!$(MSBuildProjectName.Contains('Tests')) And $(MSBuildProjectName.StartsWith('blueshot'))">
     <PackageReference Include="Nerdbank.GitVersioning" Version="3.9.50">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
@@ -61,12 +61,12 @@
 
   <!-- Exclude the Roslyn-generated *.g.cs files from the normal compilation glob so they are
        not compiled twice (once from the generator output and once from the **/*.cs wildcard). -->
-  <ItemGroup Condition="!$(MSBuildProjectName.Contains('Tests')) And $(MSBuildProjectName.StartsWith('Greenshot'))">
+  <ItemGroup Condition="!$(MSBuildProjectName.Contains('Tests')) And $(MSBuildProjectName.StartsWith('blueshot'))">
     <Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Tokens Include="Box13_ClientId">
+    <!-- <Tokens Include="Box13_ClientId">
       <ReplacementValue>$(Box13_ClientId)</ReplacementValue>
     </Tokens>
     <Tokens Include="Box13_ClientSecret">
@@ -83,7 +83,7 @@
     </Tokens>
     <Tokens Include="Imgur13_ClientSecret">
       <ReplacementValue>$(Imgur13_ClientSecret)</ReplacementValue>
-    </Tokens>
+    </Tokens> -->
   </ItemGroup>
 
   <!-- Add MSBuild.Community.Tasks to use the TemplateFile Task-->
@@ -91,7 +91,7 @@
     <PackageReference Include="MSBuildTasks" Version="1.5.0.235" GeneratePathProperty="true" DevelopmentDependency="true" />
   </ItemGroup>
 
-  <Target Name="PostBuild" BeforeTargets="PostBuildEvent" Condition="$(MSBuildProjectName.StartsWith('Greenshot.Plugin.'))">
+  <Target Name="PostBuild" BeforeTargets="PostBuildEvent" Condition="$(MSBuildProjectName.StartsWith('blueshot.Plugin.'))">
     <Exec Command="
     IF NOT EXIST &quot;$(SolutionDir)$(SolutionName)\$(OutDir)Plugins\$(TargetName)&quot; (&#xD;&#xA;
             mkdir &quot;$(SolutionDir)$(SolutionName)\$(OutDir)Plugins\$(TargetName)&quot;&#xD;&#xA;

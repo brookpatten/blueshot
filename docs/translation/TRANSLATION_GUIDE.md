@@ -1,49 +1,49 @@
-# Greenshot Translation Guide
+# blueshot Translation Guide
 
-This guide provides comprehensive instructions for working with translations in the Greenshot project.
+This guide provides comprehensive instructions for working with translations in the blueshot project.
 
 ## Overview
 
-Greenshot supports **39 languages** in the main application and varying numbers of languages for different plugins. Translation files are stored in XML format (with a few legacy `.ini` files in the Office plugin).
+blueshot supports **39 languages** in the main application and varying numbers of languages for different plugins. Translation files are stored in XML format (with a few legacy `.ini` files in the Office plugin).
 
 ### Repository Structure
 
 ```
 src/
-├── Greenshot/
+├── blueshot/
 │   └── Languages/
 │       ├── language-en-US.xml    (Primary/Reference language - 281 resources)
 │       ├── language-de-DE.xml
 │       ├── language-fr-FR.xml
 │       └── ... (39 total languages)
-├── Greenshot.Plugin.Box/
+├── blueshot.Plugin.Box/
 │   └── Languages/
 │       └── language_box-{locale}.xml    (19 languages)
-├── Greenshot.Plugin.Confluence/
+├── blueshot.Plugin.Confluence/
 │   └── Languages/
 │       └── language_confluence-{locale}.xml    (20 languages)
-├── Greenshot.Plugin.Dropbox/
+├── blueshot.Plugin.Dropbox/
 │   └── Languages/
 │       └── language_dropbox-{locale}.xml    (19 languages)
-├── Greenshot.Plugin.ExternalCommand/
+├── blueshot.Plugin.ExternalCommand/
 │   └── Languages/
 │       └── language_externalcommand-{locale}.xml    (20 languages)
-├── Greenshot.Plugin.Flickr/
+├── blueshot.Plugin.Flickr/
 │   └── Languages/
 │       └── language_flickr-{locale}.xml    (19 languages)
-├── Greenshot.Plugin.GooglePhotos/
+├── blueshot.Plugin.GooglePhotos/
 │   └── Languages/
 │       └── language_googlephotos-{locale}.xml    (19 languages)
-├── Greenshot.Plugin.Imgur/
+├── blueshot.Plugin.Imgur/
 │   └── Languages/
 │       └── language_imgur-{locale}.xml    (21 languages)
-├── Greenshot.Plugin.Jira/
+├── blueshot.Plugin.Jira/
 │   └── Languages/
 │       └── language_jira-{locale}.xml    (20 languages)
-├── Greenshot.Plugin.Office/
+├── blueshot.Plugin.Office/
 │   └── Languages/
 │       └── language_office-{locale}.ini    (2 languages - LEGACY FORMAT)
-└── Greenshot.Plugin.Photobucket/
+└── blueshot.Plugin.Photobucket/
     └── Languages/
         └── language_photobucket-{locale}.xml    (19 languages)
 ```
@@ -176,19 +176,19 @@ When adding new resources to the English file, consider adding XML comments to h
 
 1. **XML Well-formedness**: Ensure files are valid XML
    ```bash
-   xmllint --noout src/Greenshot/Languages/language-de-DE.xml
+   xmllint --noout src/blueshot/Languages/language-de-DE.xml
    ```
 
 2. **Encoding**: All XML files must be UTF-8 with BOM (`﻿<?xml`)
 
 3. **Resource Count**: Compare resource counts between languages
    ```bash
-   grep -c '<resource name=' src/Greenshot/Languages/language-*.xml
+   grep -c '<resource name=' src/blueshot/Languages/language-*.xml
    ```
 
 4. **Missing Translations**: Look for empty resource values
    ```bash
-   grep '<resource name="[^"]*"></resource>' src/Greenshot/Languages/language-*.xml
+   grep '<resource name="[^"]*"></resource>' src/blueshot/Languages/language-*.xml
    ```
 
 ### Automated Validation Ideas
@@ -216,7 +216,7 @@ Each plugin has its own `Languages/` directory with fewer resources than the mai
 
 When resources are limited, prioritize:
 
-1. **Main application** (`src/Greenshot/Languages/`) - Most visible to users
+1. **Main application** (`src/blueshot/Languages/`) - Most visible to users
 2. **Commonly used plugins** (Imgur, Dropbox, Box) - High-traffic features
 3. **Error messages** - Critical for troubleshooting
 4. **UI labels and buttons** - Core user interaction
@@ -254,13 +254,13 @@ If you encounter:
 - [ ] Update Office plugin to use same translation loading mechanism
 
 ### Documentation
-- [ ] Add screenshots of Greenshot UI with key areas labeled
+- [ ] Add screenshots of blueshot UI with key areas labeled
 - [ ] Create visual guide showing where different resource groups appear
 - [ ] Build automated translation synchronization tools
 
 ## References
 
-- **Language Loader Code**: `src/Greenshot.Base/Core/Language.cs`
+- **Language Loader Code**: `src/blueshot.Base/Core/Language.cs`
 - **IETF Language Tags**: [RFC 5646](https://tools.ietf.org/html/rfc5646)
 - **Windows Language Groups**: [MSDN Reference](http://msdn.microsoft.com/en-us/goglobal/bb964663#EVD)
 - **Contributing Guidelines**: `CONTRIBUTING.md` (for code style when examining code context)

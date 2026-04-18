@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Please search existing issues first, including closed ones, to avoid creating duplicates.
-        [Search existing issues here: https://github.com/greenshot/greenshot/issues](https://github.com/greenshot/greenshot/issues?q=is%3Aissue)
+        [Search existing issues here: https://github.com/blueshot/blueshot/issues](https://github.com/blueshot/blueshot/issues?q=is%3Aissue)
 
   - type: checkboxes
     id: duplicate-check
@@ -39,7 +39,7 @@ body:
       value: |
         ### Additional context
         Please provide any additional information that may help us understand and implement the feature.
-        Maybe you know of a similar feature in another project, or have an idea of how to implement it in Greenshot.
+        Maybe you know of a similar feature in another project, or have an idea of how to implement it in blueshot.
         _(You can drag and drop files into the issue body to upload them)_
 
   - type: textarea

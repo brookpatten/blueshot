@@ -1,10 +1,10 @@
 # Translation Documentation
 
-This directory contains comprehensive documentation for working with translations in the Greenshot project.
+This directory contains comprehensive documentation for working with translations in the blueshot project.
 
 ## Quick Start
 
-**New to Greenshot translations?** Start here:
+**New to blueshot translations?** Start here:
 1. Read the [Translation Guide](TRANSLATION_GUIDE.md) to understand the structure
 2. Review the [Translation Glossary](TRANSLATION_GLOSSARY.md) for standard terms
 3. Follow the appropriate checklist in the [Translation Workflow](TRANSLATION_WORKFLOW.md)
@@ -13,7 +13,7 @@ This directory contains comprehensive documentation for working with translation
 ## Documentation Files
 
 ### 📖 [TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md)
-**Comprehensive guide to Greenshot translations**
+**Comprehensive guide to blueshot translations**
 
 - Overview of the translation system (39 languages, XML format)
 - Repository structure and file locations
@@ -23,7 +23,7 @@ This directory contains comprehensive documentation for working with translation
 - Common issues and workarounds
 - Migration TODOs
 
-**Read this first** to understand how translations work in Greenshot.
+**Read this first** to understand how translations work in blueshot.
 
 ### 📚 [TRANSLATION_GLOSSARY.md](TRANSLATION_GLOSSARY.md)
 **Project-specific terminology and standard translations**
@@ -68,7 +68,7 @@ Includes checklists for:
 
 ## Common Tasks
 
-### I want to translate Greenshot to a new language
+### I want to translate blueshot to a new language
 
 1. Read [TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md) - "Adding a New Language" section
 2. Follow Checklist 5 in [TRANSLATION_WORKFLOW.md](TRANSLATION_WORKFLOW.md)
@@ -108,7 +108,7 @@ Includes checklists for:
 
 ### Main Application
 ```
-src/Greenshot/Languages/
+src/blueshot/Languages/
 ├── language-en-US.xml        ← Primary/Reference (281 resources)
 ├── language-de-DE.xml
 ├── language-fr-FR.xml
@@ -118,7 +118,7 @@ src/Greenshot/Languages/
 
 ### Plugins
 ```
-src/Greenshot.Plugin.*/Languages/
+src/blueshot.Plugin.*/Languages/
 ├── language_{plugin}-en-US.xml
 ├── language_{plugin}-de-DE.xml
 └── ... (typically 19-21 languages)
@@ -186,7 +186,7 @@ When working with the translation agent, reference the appropriate documentation
 
 ## Additional Resources
 
-- **Language Loader Code**: `src/Greenshot.Base/Core/Language.cs`
+- **Language Loader Code**: `src/blueshot.Base/Core/Language.cs`
 - **IETF Language Tags**: [RFC 5646](https://tools.ietf.org/html/rfc5646)
 - **Windows Language Groups**: [MSDN Reference](http://msdn.microsoft.com/en-us/goglobal/bb964663#EVD)
 - **Contributing Guidelines**: `CONTRIBUTING.md` (for code style)

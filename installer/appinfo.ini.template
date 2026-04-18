@@ -3,12 +3,12 @@ Type=PortableApps.comFormat
 Version=2.0
 
 [Details]
-Name=Greenshot Portable
-AppID=Greenshot_for_PortableApps
-Publisher=Greenshot
-Homepage=getgreenshot.org
+Name=blueshot Portable
+AppID=blueshot_for_PortableApps
+Publisher=blueshot
+Homepage=getblueshot.org
 Category=Graphics & Pictures
-Description=Greenshot tool
+Description=blueshot tool
 Language=Multilingual
 Trademarks=
 InstallType=
@@ -33,4 +33,4 @@ UsesDotNetVersion=3.5
 
 [Control]
 Icons=1
-Start=Greenshot.exe
+Start=blueshot.exe

@@ -1,6 +1,6 @@
 # USAGE
 # * Enable script execution in Powershell: 'Set-ExecutionPolicy RemoteSigned'
-# * Create a GitHub personal access token (PAT) for greenshot repository
+# * Create a GitHub personal access token (PAT) for blueshot repository
 #   * user must be owner of the repository
 #   * token needs read and write permissions ""for Contents"" and ""Pages""
 # * Execute the script and paste your token
@@ -11,10 +11,10 @@ $ReleaseToken = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([Syste
 
 # Variables
 $RepoPath = "."  # Replace with your local repo path
-$BuildArtifactsPath = "$RepoPath\src\Greenshot\bin\Release\net481"
+$BuildArtifactsPath = "$RepoPath\src\Blueshot\bin\Release\net481"
 $ArtifactsPath = "$RepoPath\artifacts"
 $PortableFilesPath = "$ArtifactsPath\portable-files"
-$SolutionFile = "$RepoPath\src\Greenshot.sln"
+$SolutionFile = "$RepoPath\src\Blueshot\Blueshot.sln"
 
 # Clear Artifacts Directory
 Remove-Item -Path "$ArtifactsPath\*" -Recurse -Force
@@ -41,12 +41,12 @@ if ($LASTEXITCODE -ne 0) {
 
 # Extract Version from File Name
 Write-Host "Extracting version from installer file name..."
-$InstallerFile = Get-ChildItem "$RepoPath\installer" -Filter "Greenshot-INSTALLER-*.exe" | Select-Object -Last 1
+$InstallerFile = Get-ChildItem "$RepoPath\installer" -Filter "blueshot-INSTALLER-*.exe" | Select-Object -Last 1
 if (-not $InstallerFile) {
     Write-Error "No matching installer file found in '$RepoPath\installer'."
     exit 1
 }
-if ($InstallerFile.Name -match "Greenshot-INSTALLER-([\d\.]+).*\.exe") {
+if ($InstallerFile.Name -match "blueshot-INSTALLER-([\d\.]+).*\.exe") {
     $Version = $matches[1]
     Write-Host "Extracted version: $Version"
 } else {
@@ -56,11 +56,11 @@ if ($InstallerFile.Name -match "Greenshot-INSTALLER-([\d\.]+).*\.exe") {
 
 # Copy Installer Files
 Write-Host "Copying installer files..."
-$ExeArtifactPath = "$ArtifactsPath\Greenshot-INSTALLER-$Version-RELEASE.exe"
+$ExeArtifactPath = "$ArtifactsPath\blueshot-INSTALLER-$Version-RELEASE.exe"
 if (-not (Test-Path $ArtifactsPath)) {
     New-Item -ItemType Directory -Force -Path $ArtifactsPath
 }
-Copy-Item "$RepoPath\installer\Greenshot-INSTALLER-*.exe" -Destination $ExeArtifactPath -Force
+Copy-Item "$RepoPath\installer\blueshot-INSTALLER-*.exe" -Destination $ExeArtifactPath -Force
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Failed to copy installer files."
     exit $LASTEXITCODE
@@ -79,7 +79,7 @@ if ($LASTEXITCODE -ne 0) {
 
 # Create ZIP Archive
 Write-Host "Creating ZIP archive..."
-$ZipArtifactPath = "$ArtifactsPath\Greenshot-PORTABLE-$Version-RELEASE.zip"
+$ZipArtifactPath = "$ArtifactsPath\blueshot-PORTABLE-$Version-RELEASE.zip"
 Compress-Archive -Path "$PortableFilesPath/*" -DestinationPath $ZipArtifactPath -Force
 
 # Create Git Tag
@@ -100,14 +100,14 @@ $Headers = @{
 }
 $ReleaseData = @{
     tag_name              = "v$Version"
-    name                  = "Greenshot $Version unstable"
-    body                  = "Pre-release of Greenshot $Version."
+    name                  = "blueshot $Version unstable"
+    body                  = "Pre-release of blueshot $Version."
     draft                 = $true
     prerelease            = $true
     generate_release_notes = $true
 }
 $ReleaseResponse = Invoke-RestMethod `
-    -Uri "https://api.github.com/repos/greenshot/greenshot/releases" `
+    -Uri "https://api.github.com/repos/blueshot/blueshot/releases" `
     -Method POST `
     -Headers $Headers `
     -Body (ConvertTo-Json $ReleaseData -Depth 10)
