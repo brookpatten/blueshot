@@ -23,13 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenshot.Plugin.ExternalCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenshot.Plugin.Confluence", "Greenshot.Plugin.Confluence\Greenshot.Plugin.Confluence.csproj", "{C3052651-598A-44E2-AAB3-2E41311D50F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenshot.Plugin.Imgur", "Greenshot.Plugin.Imgur\Greenshot.Plugin.Imgur.csproj", "{80D8DEB9-94E3-4876-8CCA-2DF1ED5F2C50}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenshot.Plugin.Jira", "Greenshot.Plugin.Jira\Greenshot.Plugin.Jira.csproj", "{19FEEF09-313F-43C7-819D-F1BCA782B08B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenshot.Plugin.Box", "Greenshot.Plugin.Box\Greenshot.Plugin.Box.csproj", "{697CF066-9077-4F22-99D9-D989CCE7282B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenshot.Plugin.Dropbox", "Greenshot.Plugin.Dropbox\Greenshot.Plugin.Dropbox.csproj", "{AD7CFFE2-40E7-46CF-A172-D48CF7AE9A12}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenshot.Plugin.Office", "Greenshot.Plugin.Office\Greenshot.Plugin.Office.csproj", "{92599C09-FF29-4ABD-B6E6-C48ECD781BAB}"
 EndProject
