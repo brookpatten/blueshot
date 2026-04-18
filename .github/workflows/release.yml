@@ -18,11 +18,11 @@ on:
       - 'build-and-deploy.ps1'
 
 jobs:
-  # Build Greenshot with MSBuild
+  # Build blueshot with MSBuild
   # Upload installer to artifacts-installer
-  # Upload build output to artifacts-greenshot-build
+  # Upload build output to artifacts-blueshot-build
   build:
-    name: Build Greenshot
+    name: Build blueshot
     runs-on: windows-latest
     steps:
     - name: Checkout repository
@@ -39,41 +39,41 @@ jobs:
         dotnet-version: '7.x'
 
     - name: Restore NuGet packages 
-      run: msbuild src/Greenshot.sln /p:Configuration=Release /restore /t:PrepareForBuild
+      run: msbuild src/blueshot.sln /p:Configuration=Release /restore /t:PrepareForBuild
       env:
-        Box13_ClientId: ${{ secrets.Box13_ClientId }}
-        Box13_ClientSecret: ${{ secrets.Box13_ClientSecret }}
-        DropBox13_ClientId: ${{ secrets.DropBox13_ClientId }}
-        DropBox13_ClientSecret: ${{ secrets.DropBox13_ClientSecret }}
-        Flickr_ClientId: ${{ secrets.Flickr_ClientId }}
-        Flickr_ClientSecret: ${{ secrets.Flickr_ClientSecret }}
-        Imgur13_ClientId: ${{ secrets.Imgur13_ClientId }}
-        Imgur13_ClientSecret: ${{ secrets.Imgur13_ClientSecret }}
-        Photobucket_ClientId: ${{ secrets.Photobucket_ClientId }}
-        Photobucket_ClientSecret: ${{ secrets.Photobucket_ClientSecret }}
-        Picasa_ClientId: ${{ secrets.Picasa_ClientId }}
-        Picasa_ClientSecret: ${{ secrets.Picasa_ClientSecret }}
+        # Box13_ClientId: ${{ secrets.Box13_ClientId }}
+        # Box13_ClientSecret: ${{ secrets.Box13_ClientSecret }}
+        # DropBox13_ClientId: ${{ secrets.DropBox13_ClientId }}
+        # DropBox13_ClientSecret: ${{ secrets.DropBox13_ClientSecret }}
+        # Flickr_ClientId: ${{ secrets.Flickr_ClientId }}
+        # Flickr_ClientSecret: ${{ secrets.Flickr_ClientSecret }}
+        # Imgur13_ClientId: ${{ secrets.Imgur13_ClientId }}
+        # Imgur13_ClientSecret: ${{ secrets.Imgur13_ClientSecret }}
+        # Photobucket_ClientId: ${{ secrets.Photobucket_ClientId }}
+        # Photobucket_ClientSecret: ${{ secrets.Photobucket_ClientSecret }}
+        # Picasa_ClientId: ${{ secrets.Picasa_ClientId }}
+        # Picasa_ClientSecret: ${{ secrets.Picasa_ClientSecret }}
 
     - name: Build and package
-      run: msbuild src/Greenshot.sln /p:Configuration=Release /t:Rebuild /v:normal
+      run: msbuild src/blueshot.sln /p:Configuration=Release /t:Rebuild /v:normal
       env:
-        Box13_ClientId: ${{ secrets.Box13_ClientId }}
-        Box13_ClientSecret: ${{ secrets.Box13_ClientSecret }}
-        DropBox13_ClientId: ${{ secrets.DropBox13_ClientId }}
-        DropBox13_ClientSecret: ${{ secrets.DropBox13_ClientSecret }}
-        Flickr_ClientId: ${{ secrets.Flickr_ClientId }}
-        Flickr_ClientSecret: ${{ secrets.Flickr_ClientSecret }}
-        Imgur13_ClientId: ${{ secrets.Imgur13_ClientId }}
-        Imgur13_ClientSecret: ${{ secrets.Imgur13_ClientSecret }}
-        Photobucket_ClientId: ${{ secrets.Photobucket_ClientId }}
-        Photobucket_ClientSecret: ${{ secrets.Photobucket_ClientSecret }}
-        Picasa_ClientId: ${{ secrets.Picasa_ClientId }}
-        Picasa_ClientSecret: ${{ secrets.Picasa_ClientSecret }}
+        # Box13_ClientId: ${{ secrets.Box13_ClientId }}
+        # Box13_ClientSecret: ${{ secrets.Box13_ClientSecret }}
+        # DropBox13_ClientId: ${{ secrets.DropBox13_ClientId }}
+        # DropBox13_ClientSecret: ${{ secrets.DropBox13_ClientSecret }}
+        # Flickr_ClientId: ${{ secrets.Flickr_ClientId }}
+        # Flickr_ClientSecret: ${{ secrets.Flickr_ClientSecret }}
+        # Imgur13_ClientId: ${{ secrets.Imgur13_ClientId }}
+        # Imgur13_ClientSecret: ${{ secrets.Imgur13_ClientSecret }}
+        # Photobucket_ClientId: ${{ secrets.Photobucket_ClientId }}
+        # Photobucket_ClientSecret: ${{ secrets.Photobucket_ClientSecret }}
+        # Picasa_ClientId: ${{ secrets.Picasa_ClientId }}
+        # Picasa_ClientSecret: ${{ secrets.Picasa_ClientSecret }}
 
     - name: Copy Files
       run: |
         mkdir -p ${{ github.workspace }}/artifacts
-        cp installer/Greenshot-INSTALLER-*.exe ${{ github.workspace }}/artifacts/
+        cp installer/blueshot-INSTALLER-*.exe ${{ github.workspace }}/artifacts/
     
     - name: Upload Installer Artifact
       uses: actions/upload-artifact@v4
@@ -85,8 +85,8 @@ jobs:
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: artifacts-greenshot-build
-        path: src/Greenshot/bin/Release/net480/**
+        name: artifacts-blueshot-build
+        path: src/blueshot/bin/Release/net480/**
         if-no-files-found: error
 
   pre_deploy:
@@ -110,11 +110,11 @@ jobs:
         if: env.IS_MAIN_OR_RELEASE_BRANCH == 'true'
         id: version_from_filename
         run: |
-          $file = Get-ChildItem artifacts-installer -Filter "Greenshot-INSTALLER-*.exe" | Select-Object -First 1
+          $file = Get-ChildItem artifacts-installer -Filter "blueshot-INSTALLER-*.exe" | Select-Object -First 1
           if (-not $file) {
             throw "No matching file found in 'artifacts-installer' directory."
           }
-          if ($file.Name -match "Greenshot-INSTALLER-([\d\.]+(-g[\da-f]+)?)(.*)\.exe") {
+          if ($file.Name -match "blueshot-INSTALLER-([\d\.]+(-g[\da-f]+)?)(.*)\.exe") {
             echo "version=$($matches[1])" >> $Env:GITHUB_OUTPUT
           } else {
             throw "Version number could not be extracted from file name: $($file.Name)"
@@ -138,7 +138,7 @@ jobs:
 
   portable:
     # Creates a portable app from the build output
-    # Creates a ZIP archive and uploads it to artifacts-greenshot-portable
+    # Creates a ZIP archive and uploads it to artifacts-blueshot-portable
     name: Build Portable ZIP
     runs-on: ubuntu-latest
     needs: pre_deploy
@@ -151,27 +151,27 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v5
         with:
-          name: artifacts-greenshot-build
-          path: artifacts-greenshot-build
+          name: artifacts-blueshot-build
+          path: artifacts-blueshot-build
 
       - name: Prepare portable folder
         run: |
-          $buildArtifacts = "${{ github.workspace }}/artifacts-greenshot-build"
+          $buildArtifacts = "${{ github.workspace }}/artifacts-blueshot-build"
           $portableDir = "${{ github.workspace }}/portable"
           pwsh -File "${{ github.workspace }}/prepare-portable.ps1" -RepositoryRootPath ${{ github.workspace }} -BuildArtifactsPath $buildArtifacts -OutputPath $portableDir
         shell: pwsh
 
       - name: Create ZIP archive
         run: |
-          $zipName = "Greenshot-PORTABLE-${{ needs.pre_deploy.outputs.version }}-UNSTABLE-UNSIGNED.zip"
+          $zipName = "blueshot-PORTABLE-${{ needs.pre_deploy.outputs.version }}-UNSTABLE-UNSIGNED.zip"
           Compress-Archive -Path "${{ github.workspace }}/portable/*" -DestinationPath $zipName -Force
         shell: pwsh
       
       - name: Upload portable build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: artifacts-greenshot-portable
-          path: Greenshot-PORTABLE-*.zip
+          name: artifacts-blueshot-portable
+          path: blueshot-PORTABLE-*.zip
           if-no-files-found: error
 
   deploy:
@@ -200,8 +200,8 @@ jobs:
       - name: Download portable artifacts
         uses: actions/download-artifact@v5
         with:
-          name: artifacts-greenshot-portable
-          path: artifacts-greenshot-portable
+          name: artifacts-blueshot-portable
+          path: artifacts-blueshot-portable
 
       - name: Create tag
         if: env.IS_MAIN_OR_RELEASE_BRANCH == 'true'
@@ -216,25 +216,25 @@ jobs:
         run: |
           branch="${BRANCH_NAME:-${GITHUB_REF#refs/heads/}}"
           sanitized=$(echo "$branch" | sed 's/[^a-zA-Z0-9._-]/_/g')
-          mv artifacts-installer/Greenshot-INSTALLER-*.exe "artifacts-installer/Greenshot-INSTALLER-${sanitized}.exe"
+          mv artifacts-installer/blueshot-INSTALLER-*.exe "artifacts-installer/blueshot-INSTALLER-${sanitized}.exe"
         shell: bash
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          name: "Greenshot ${{ needs.pre_deploy.outputs.version }} (continuous build)"
+          name: "blueshot ${{ needs.pre_deploy.outputs.version }} (continuous build)"
           tag_name: ${{ needs.pre_deploy.outputs.tag_name }}
-          files: artifacts-installer/*.exe, artifacts-greenshot-portable/*.zip
+          files: artifacts-installer/*.exe, artifacts-blueshot-portable/*.zip
           generate_release_notes: true
           draft: ${{ env.IS_MAIN_OR_RELEASE_BRANCH != 'true'  }}
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Trigger GitHub Pages rebuild
-        shell: bash
-        run: |
-          curl -X POST \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/${{ github.repository }}/pages/builds
+      # - name: Trigger GitHub Pages rebuild
+      #   shell: bash
+      #   run: |
+      #     curl -X POST \
+      #       -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+      #       -H "Accept: application/vnd.github+json" \
+      #       https://api.github.com/repos/${{ github.repository }}/pages/builds

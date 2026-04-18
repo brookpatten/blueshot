@@ -11,11 +11,11 @@ be helpful to understand the context of a message.
 
 ## Primary Language and Structure
 
-- The **leading language is English (en-US)**, located at `src/Greenshot/Languages/language-en-US.xml`
+- The **leading language is English (en-US)**, located at `src/blueshot/Languages/language-en-US.xml`
   - It is used during development and guaranteed to be up to date
   - Currently contains **281 resources**
 - Translation files are in **XML format** (UTF-8 with BOM)
-- Greenshot supports **39 languages** in the main application
+- blueshot supports **39 languages** in the main application
 - Plugins have their own language files (typically 19-21 languages per plugin)
 
 ## Key Documentation Resources
@@ -108,8 +108,8 @@ Before starting translation work:
 
 ## File Locations
 
-- **Main app**: `src/Greenshot/Languages/language-{locale}.xml`
-- **Plugins**: `src/Greenshot.Plugin.{Name}/Languages/language_{plugin}-{locale}.xml`
+- **Main app**: `src/blueshot/Languages/language-{locale}.xml`
+- **Plugins**: `src/blueshot.Plugin.{Name}/Languages/language_{plugin}-{locale}.xml`
 - **Documentation**: `docs/translation/` (see `docs/translation/README.md` for index)
 - **Tools**: `docs/translation/TRANSLATION_TOOLS.md` (validation scripts and commands)
   

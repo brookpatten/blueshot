@@ -1,6 +1,6 @@
 # Release Management
 
-Greenshot releases are delivered in different flavors.
+blueshot releases are delivered in different flavors.
 
 ## Versioning
 
@@ -30,6 +30,6 @@ in a dedicated environment for building and signing releases.
 
 ## Version History Updates
 
-Regardless of how the release is built, the [version history](https://getgreenshot.org/version-history/) 
-and (if needed) the [download page](https://getgreenshot.org/downloads/) are automatically updated. 
+Regardless of how the release is built, the [version history](https://getblueshot.org/version-history/) 
+and (if needed) the [download page](https://getblueshot.org/downloads/) are automatically updated. 
 This is done by a dedicated GitHub workflow for [updating Github Pages](../.github/workflows/update-gh-pages.yml).

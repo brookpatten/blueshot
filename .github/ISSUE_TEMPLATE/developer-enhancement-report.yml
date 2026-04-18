@@ -9,7 +9,7 @@ body:
         This helps us maintain a high-quality codebase and ensures that we are using the best tools and practices.
 
         Please search existing issues first, including closed ones, to avoid creating duplicates.
-        [Search existing issues here: https://github.com/greenshot/greenshot/issues](https://github.com/greenshot/greenshot/issues?q=is%3Aissue)
+        [Search existing issues here: https://github.com/blueshot/blueshot/issues](https://github.com/blueshot/blueshot/issues?q=is%3Aissue)
 
   - type: checkboxes
     id: duplicate-check

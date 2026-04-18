@@ -1,10 +1,10 @@
 # Translation Workflow Checklist
 
-This document provides step-by-step checklists for common translation tasks in the Greenshot project.
+This document provides step-by-step checklists for common translation tasks in the blueshot project.
 
 ## Quick Reference
 
-- **Primary Language**: English (en-US) - `src/Greenshot/Languages/language-en-US.xml`
+- **Primary Language**: English (en-US) - `src/blueshot/Languages/language-en-US.xml`
 - **Total Languages**: 39 in main app, 19-21 in most plugins
 - **File Format**: XML (UTF-8 with BOM)
 - **Glossary**: See `TRANSLATION_GLOSSARY.md`
@@ -18,7 +18,7 @@ When a developer adds a new feature requiring translation:
 
 ### For the Developer (Adding to en-US)
 
-- [ ] Add the new resource to `src/Greenshot/Languages/language-en-US.xml`
+- [ ] Add the new resource to `src/blueshot/Languages/language-en-US.xml`
 - [ ] Use a clear, descriptive resource name following existing patterns
   - [ ] Use appropriate prefix (`editor_`, `settings_`, `contextmenu_`, etc.)
   - [ ] Use lowercase with underscores (e.g., `editor_new_feature_title`)
@@ -84,11 +84,11 @@ For each language you're translating:
 
 - [ ] Validate XML syntax:
   ```bash
-  xmllint --noout src/Greenshot/Languages/language-XX-YY.xml
+  xmllint --noout src/blueshot/Languages/language-XX-YY.xml
   ```
 - [ ] Check for typos and grammatical errors
 - [ ] Verify no resource names were changed (only content translated)
-- [ ] Test file in Greenshot if possible (see Testing section)
+- [ ] Test file in blueshot if possible (see Testing section)
 
 ---
 
@@ -153,7 +153,7 @@ When adding support for a completely new language:
 
 - [ ] Determine the correct IETF language tag (e.g., `pt-BR`, `zh-CN`)
 - [ ] Find the Windows language group number (see MSDN docs)
-- [ ] Create new file: `src/Greenshot/Languages/language-XX-YY.xml`
+- [ ] Create new file: `src/blueshot/Languages/language-XX-YY.xml`
 
 ### File Creation
 
@@ -179,7 +179,7 @@ When adding support for a completely new language:
 
 ### Testing
 
-- [ ] Build Greenshot with new language
+- [ ] Build blueshot with new language
 - [ ] Verify language appears in language selection
 - [ ] Check UI for:
   - [ ] Text truncation issues
@@ -228,11 +228,11 @@ Before committing translation work:
 
 ### Testing
 
-- [ ] Build Greenshot (if possible):
+- [ ] Build blueshot (if possible):
   ```powershell
-  msbuild src/Greenshot.sln /p:Configuration=Release /t:Rebuild
+  msbuild src/blueshot.sln /p:Configuration=Release /t:Rebuild
   ```
-- [ ] Launch Greenshot
+- [ ] Launch blueshot
 - [ ] Select your language in settings
 - [ ] Navigate through UI checking translations:
   - [ ] Context menu
@@ -321,7 +321,7 @@ When translating plugin-specific strings:
 
 ### Translation
 
-- [ ] Locate plugin language files: `src/Greenshot.Plugin.{Name}/Languages/`
+- [ ] Locate plugin language files: `src/blueshot.Plugin.{Name}/Languages/`
 - [ ] Follow same process as main app translation
 - [ ] Keep service-specific terms:
   - [ ] "Box" stays "Box"
@@ -383,17 +383,17 @@ When translating plugin-specific strings:
 
 ```bash
 # Validate XML syntax
-xmllint --noout src/Greenshot/Languages/language-XX-YY.xml
+xmllint --noout src/blueshot/Languages/language-XX-YY.xml
 
 # Count resources
-grep -c '<resource name=' src/Greenshot/Languages/language-XX-YY.xml
+grep -c '<resource name=' src/blueshot/Languages/language-XX-YY.xml
 
 # Find empty resources
-grep '<resource name="[^"]*"></resource>' src/Greenshot/Languages/language-XX-YY.xml
+grep '<resource name="[^"]*"></resource>' src/blueshot/Languages/language-XX-YY.xml
 
 # Compare resource keys between languages
-diff <(grep 'resource name=' src/Greenshot/Languages/language-en-US.xml | sort) \
-     <(grep 'resource name=' src/Greenshot/Languages/language-de-DE.xml | sort)
+diff <(grep 'resource name=' src/blueshot/Languages/language-en-US.xml | sort) \
+     <(grep 'resource name=' src/blueshot/Languages/language-de-DE.xml | sort)
 ```
 
 ### Recommended Approach
@@ -401,7 +401,7 @@ diff <(grep 'resource name=' src/Greenshot/Languages/language-en-US.xml | sort) 
 1. **Use a good XML editor**: Visual Studio Code, Notepad++, or specialized XML editors
 2. **Enable XML validation**: Catch errors as you type
 3. **Use version control**: Git to track changes and compare versions
-4. **Test frequently**: Build and run Greenshot to see translations in context
+4. **Test frequently**: Build and run blueshot to see translations in context
 5. **Document decisions**: Add comments for non-obvious translations
 
 ---

@@ -1,12 +1,12 @@
-# Greenshot 1.4 Development Changelog
+# blueshot 1.4 Development Changelog
 
-This document contains the changelog for Greenshot 1.4, which is currently in active development as continuous builds (unstable releases).
+This document contains the changelog for blueshot 1.4, which is currently in active development as continuous builds (unstable releases).
 
 **Note**: Version 1.4 is not yet released as a stable version. All builds are continuous/development builds and are unsigned. These builds are marked as "UNSTABLE-UNSIGNED" and should be considered beta quality.
 
-## About Greenshot 1.4
+## About blueshot 1.4
 
-Greenshot 1.4 represents the next major version currently under active development. Development began in November 2025 after the final 1.3 stable release (1.3.312 in January 2026).
+blueshot 1.4 represents the next major version currently under active development. Development began in November 2025 after the final 1.3 stable release (1.3.312 in January 2026).
 
 **Current Status**: Continuous Development Builds (Prereleases)
 **Latest Build**: v1.4.108 (March 14, 2026)
@@ -15,7 +15,7 @@ Greenshot 1.4 represents the next major version currently under active developme
 ### How to Get 1.4 Builds
 
 Continuous builds are automatically created for every commit to the `main` branch:
-- Visit the [GitHub Releases page](https://github.com/greenshot/greenshot/releases)
+- Visit the [GitHub Releases page](https://github.com/blueshot/blueshot/releases)
 - Look for releases tagged with version numbers like `v1.4.X-gXXXXXXXXXX (continuous build)`
 - Download the installer or portable ZIP marked as "UNSTABLE-UNSIGNED"
 
@@ -52,15 +52,15 @@ Continuous builds are automatically created for every commit to the `main` branc
 - Command line help is now automatically generated with comprehensive option descriptions
 - Old format (`/help`, `/exit`, `/reload`, `/norun`, `/language`, `/inidirectory`) replaced with modern alternatives (`--help`, `--exit`, `--reload`, `--no-run`, `--language <code>`, `--ini-directory <path>`)
 - Added hidden `--restore` option for Windows Restart Manager integration
-- Run `Greenshot --help` to see all available options
+- Run `blueshot --help` to see all available options
 
 #### 🔄 Windows Restart Manager Integration
 
 **Automatic State Recovery During Updates**
-- Greenshot now integrates with Windows Restart Manager to seamlessly handle system updates and maintenance
+- blueshot now integrates with Windows Restart Manager to seamlessly handle system updates and maintenance
 - Automatically registers for restart with Windows, allowing it to participate in graceful shutdown scenarios
-- When Windows Update or other installers request a shutdown, Greenshot saves all open image editors to temporary `.greenshot` files
-- Upon restart by the Windows Restart Manager, Greenshot automatically reopens all previously open editors
+- When Windows Update or other installers request a shutdown, blueshot saves all open image editors to temporary `.blueshot` files
+- Upon restart by the Windows Restart Manager, blueshot automatically reopens all previously open editors
 - Enhances reliability during Windows Updates, preventing loss of unsaved work
 - Uses the `--restore` command line argument internally to detect restart scenarios
 
@@ -72,10 +72,10 @@ Continuous builds are automatically created for every commit to the `main` branc
 - By @Lakritzator
 
 **Windows Graphics Capture API** (Beta)
-- Greenshot can now use the modern Windows Graphics Capture (WGC) API for full-screen and region captures
+- blueshot can now use the modern Windows Graphics Capture (WGC) API for full-screen and region captures
 - Produces higher-quality screenshots by capturing each monitor individually and stitching them together
 - More compatible with modern Windows applications compared to the legacy GDI-based capture method
-- Enable this by turning on the `IsBetaTester` flag in Greenshot's configuration
+- Enable this by turning on the `IsBetaTester` flag in blueshot's configuration
 - By @Lakritzator
 
 **Improved Cursor Capture** (#863)
@@ -84,7 +84,7 @@ Continuous builds are automatically created for every commit to the `main` branc
 - By @Lakritzator
 
 **Windows 11 Capture Behavior** (#771)
-- Reverted the change that made Greenshot prefer PrintWindow on Windows 11
+- Reverted the change that made blueshot prefer PrintWindow on Windows 11
 - Improved capture compatibility
 - By @Lakritzator
 
@@ -100,7 +100,7 @@ Continuous builds are automatically created for every commit to the `main` branc
 - Better native Windows integration
 - By @Lakritzator
 
-**Confluence Plugin** (#869)
+<!-- **Confluence Plugin** (#869)
 - Replaced deprecated SOAP API with REST API
 - Modern API integration for Confluence
 - By @Copilot
@@ -108,7 +108,7 @@ Continuous builds are automatically created for every commit to the `main` branc
 **Dropbox Plugin** (#885)
 - Fixed OAuth2 flow by migrating from deprecated implicit flow to code flow
 - Ensures continued Dropbox integration
-- By @Copilot
+- By @Copilot -->
 
 **JIRA Plugin** (#871)
 - Various fixes to improve JIRA plugin functionality
@@ -134,10 +134,10 @@ Continuous builds are automatically created for every commit to the `main` branc
 
 #### 🖼️ Image Format Support
 
-**ImageSharp Integration** (#921)
+<!-- **ImageSharp Integration** (#921)
 - Added support for ImageSharp decoders and encoders
 - Extended file format support
-- By @Lakritzator
+- By @Lakritzator -->
 
 **PNG Quality Fix** (#744)
 - Avoid quality parameter for PNG in file format handler
@@ -182,8 +182,8 @@ Continuous builds are automatically created for every commit to the `main` branc
 - By @Lakritzator, @FF-Brown, and @Copilot
 
 **File Handling**
-- Fixed opening .greenshot files with emojis (#843)
-- Fixed opening older .greenshot files with StepLabels (#844)
+- Fixed opening .blueshot files with emojis (#843)
+- Fixed opening older .blueshot files with StepLabels (#844)
 - By @Christian-Schulz
 
 **COM & Windows Integration**
@@ -249,7 +249,7 @@ Continuous builds are automatically created for every commit to the `main` branc
 - By @Christian-Schulz
 
 **Print Footer** (#820, #804)
-- Use Greenshot's UI language for date formatting in print footer
+- Use blueshot's UI language for date formatting in print footer
 - By @tsiakoulias
 
 #### 🔒 Security Improvements
@@ -294,7 +294,7 @@ Continuous builds are automatically created for every commit to the `main` branc
 
 ### New Contributors in 1.4
 
-The following contributors made their first contributions to Greenshot during the 1.4 development cycle:
+The following contributors made their first contributions to blueshot during the 1.4 development cycle:
 
 - @Copilot - Multiple AI-assisted improvements and fixes
 - @danrhodes - Extensive memory leak fixes and improvements
@@ -355,7 +355,7 @@ The following contributors made their first contributions to Greenshot during th
 
 ## Comparison with 1.3
 
-Greenshot 1.4 builds upon the stable 1.3 release with these key additions:
+blueshot 1.4 builds upon the stable 1.3 release with these key additions:
 
 ### New in 1.4
 ✨ Emoji support in editor  
@@ -384,9 +384,9 @@ Greenshot 1.4 builds upon the stable 1.3 release with these key additions:
 
 ## Getting Involved
 
-Greenshot 1.4 is under active development, and we welcome contributions!
+blueshot 1.4 is under active development, and we welcome contributions!
 
-- **Report Issues**: [GitHub Issues](https://github.com/greenshot/greenshot/issues)
+- **Report Issues**: [GitHub Issues](https://github.com/blueshot/blueshot/issues)
 - **Submit Pull Requests**: [Contributing Guide](../../CONTRIBUTING.md)
 - **Test Builds**: Download and test continuous builds
 - **Translations**: Help improve language support
@@ -403,7 +403,7 @@ Greenshot 1.4 is under active development, and we welcome contributions!
 
 For more information about the release process, see [docs/release-management.md](../release-management.md).
 
-For detailed commit-by-commit changes, visit the [GitHub Releases page](https://github.com/greenshot/greenshot/releases) or the [Full Changelog](https://github.com/greenshot/greenshot/compare/v1.3.312...main).
+For detailed commit-by-commit changes, visit the [GitHub Releases page](https://github.com/blueshot/blueshot/releases) or the [Full Changelog](https://github.com/blueshot/blueshot/compare/v1.3.312...main).
 
 ---
 
@@ -411,27 +411,27 @@ For detailed commit-by-commit changes, visit the [GitHub Releases page](https://
 
 If you're upgrading from 1.3 to a 1.4 continuous build:
 
-1. **Backup your configuration**: Your settings in `%APPDATA%\Greenshot` should be preserved, but it's good practice to back them up
+1. **Backup your configuration**: Your settings in `%APPDATA%\blueshot` should be preserved, but it's good practice to back them up
 2. **Uninstall 1.3**: Completely uninstall the stable 1.3 release first
 3. **Install 1.4 build**: Install the latest 1.4 continuous build
 4. **Test thoroughly**: As these are development builds, test your usual workflows
-5. **Update command line scripts**: If you use Greenshot with command line arguments, update from `/` style (e.g., `/exit`, `/reload`) to `--` style (e.g., `--exit`, `--reload`)
+5. **Update command line scripts**: If you use blueshot with command line arguments, update from `/` style (e.g., `/exit`, `/reload`) to `--` style (e.g., `--exit`, `--reload`)
 
 ### Command Line Argument Changes
 
-If you have scripts or shortcuts that use Greenshot's command line arguments, you'll need to update them:
+If you have scripts or shortcuts that use blueshot's command line arguments, you'll need to update them:
 
 | Old Argument | New Argument | Description |
 |--------------|--------------|-------------|
 | `/help`, `/h`, `/?` | `--help`, `-h` | Show help information |
-| `/exit` | `--exit` | Close running Greenshot instance |
+| `/exit` | `--exit` | Close running blueshot instance |
 | `/reload` | `--reload` | Reload configuration |
 | `/norun` | `--no-run` | Start in configuration mode |
 | `/language [code]` | `--language <language-code>` | Set interface language |
 | `/inidirectory [path]` | `--ini-directory <directory>` | Set configuration directory |
 | `[filename...]` | `[files...]` | Capture files (unchanged) |
 
-Run `Greenshot --help` to see the complete list of available options with descriptions.
+Run `blueshot --help` to see the complete list of available options with descriptions.
 
 ⚠️ **Important**: Since 1.4 builds are unsigned, you may see Windows SmartScreen warnings. This is expected for continuous builds.
 
@@ -439,12 +439,12 @@ Run `Greenshot --help` to see the complete list of available options with descri
 
 ## Known Issues
 
-As 1.4 is in active development, there may be issues. Please check the [GitHub Issues](https://github.com/greenshot/greenshot/issues) page for:
+As 1.4 is in active development, there may be issues. Please check the [GitHub Issues](https://github.com/blueshot/blueshot/issues) page for:
 - Known bugs and limitations
 - Planned features
 - Work in progress
 
-Report any issues you encounter to help improve Greenshot!
+Report any issues you encounter to help improve blueshot!
 
 ---
 

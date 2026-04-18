@@ -1,6 +1,6 @@
 # Translation Validation Tools
 
-This document describes tools and scripts for validating translation files in the Greenshot project.
+This document describes tools and scripts for validating translation files in the blueshot project.
 
 ## Manual Validation
 
@@ -10,10 +10,10 @@ The `xmllint` tool can validate XML syntax:
 
 ```bash
 # Validate a single file
-xmllint --noout src/Greenshot/Languages/language-en-US.xml
+xmllint --noout src/blueshot/Languages/language-en-US.xml
 
 # Validate all language files
-for file in src/Greenshot/Languages/language-*.xml; do
+for file in src/blueshot/Languages/language-*.xml; do
     echo "Validating $file..."
     xmllint --noout "$file" || echo "ERROR in $file"
 done
@@ -32,14 +32,14 @@ Check if all languages have similar resource counts:
 ```bash
 # Count resources in all main app language files
 echo "Main Application Resource Counts:"
-for file in src/Greenshot/Languages/language-*.xml; do
+for file in src/blueshot/Languages/language-*.xml; do
     count=$(grep -c '<resource name=' "$file")
     basename=$(basename "$file")
     printf "%-30s %d\n" "$basename" "$count"
 done | sort -k2 -n
 
 # Compare to English reference
-english_count=$(grep -c '<resource name=' src/Greenshot/Languages/language-en-US.xml)
+english_count=$(grep -c '<resource name=' src/blueshot/Languages/language-en-US.xml)
 echo "English (reference) has $english_count resources"
 ```
 
@@ -49,10 +49,10 @@ Find resources with empty values:
 
 ```bash
 # Find empty resources in a specific file
-grep '<resource name="[^"]*"></resource>' src/Greenshot/Languages/language-de-DE.xml
+grep '<resource name="[^"]*"></resource>' src/blueshot/Languages/language-de-DE.xml
 
 # Check all language files
-for file in src/Greenshot/Languages/language-*.xml; do
+for file in src/blueshot/Languages/language-*.xml; do
     empty_count=$(grep -c '<resource name="[^"]*"></resource>' "$file" || echo "0")
     if [ "$empty_count" -gt 0 ]; then
         echo "$file has $empty_count empty resources"
@@ -70,8 +70,8 @@ Check if a language has the same resources as English:
 # Example: ./compare_keys.sh de-DE
 
 LANG_CODE=$1
-EN_FILE="src/Greenshot/Languages/language-en-US.xml"
-TARGET_FILE="src/Greenshot/Languages/language-$LANG_CODE.xml"
+EN_FILE="src/blueshot/Languages/language-en-US.xml"
+TARGET_FILE="src/blueshot/Languages/language-$LANG_CODE.xml"
 
 echo "Comparing $TARGET_FILE to English reference..."
 
@@ -97,13 +97,13 @@ Verify files are UTF-8 with BOM:
 
 ```bash
 # Check encoding of a file
-file -i src/Greenshot/Languages/language-en-US.xml
+file -i src/blueshot/Languages/language-en-US.xml
 
 # Check for BOM (should show "ef bb bf" at start)
-hexdump -C src/Greenshot/Languages/language-en-US.xml | head -1
+hexdump -C src/blueshot/Languages/language-en-US.xml | head -1
 
 # Check all files
-for file in src/Greenshot/Languages/language-*.xml; do
+for file in src/blueshot/Languages/language-*.xml; do
     encoding=$(file -b --mime-encoding "$file")
     if [ "$encoding" != "utf-8" ]; then
         echo "WARNING: $file is $encoding, not utf-8"
@@ -120,7 +120,7 @@ Save as `tools/validate_translations.py`:
 ```python
 #!/usr/bin/env python3
 """
-Greenshot Translation Validator
+blueshot Translation Validator
 
 Validates translation files for:
 - XML well-formedness
@@ -245,7 +245,7 @@ def main():
     repo_root = script_dir.parent
     
     # Find English reference
-    en_file = repo_root / 'src' / 'Greenshot' / 'Languages' / 'language-en-US.xml'
+    en_file = repo_root / 'src' / 'blueshot' / 'Languages' / 'language-en-US.xml'
     if not en_file.exists():
         print(f"ERROR: Could not find English reference file: {en_file}")
         return 1
@@ -255,7 +255,7 @@ def main():
     print(f"English has {len(reference_resources)} resources\n")
     
     # Find all language files
-    languages_dir = repo_root / 'src' / 'Greenshot' / 'Languages'
+    languages_dir = repo_root / 'src' / 'blueshot' / 'Languages'
     language_files = sorted(languages_dir.glob('language-*.xml'))
     
     print(f"Found {len(language_files)} language files\n")
@@ -310,7 +310,7 @@ python3 tools/validate_translations.py
 For Windows users, save as `tools/Validate-Translations.ps1`:
 
 ```powershell
-# Greenshot Translation Validator (PowerShell)
+# blueshot Translation Validator (PowerShell)
 
 param(
     [string]$LanguageCode = $null,
@@ -324,10 +324,10 @@ $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $RepoRoot = Split-Path -Parent $ScriptDir
 
 # Paths
-$EnglishFile = Join-Path $RepoRoot "src\Greenshot\Languages\language-en-US.xml"
-$LanguagesDir = Join-Path $RepoRoot "src\Greenshot\Languages"
+$EnglishFile = Join-Path $RepoRoot "src\blueshot\Languages\language-en-US.xml"
+$LanguagesDir = Join-Path $RepoRoot "src\blueshot\Languages"
 
-Write-Host "Greenshot Translation Validator" -ForegroundColor Cyan
+Write-Host "blueshot Translation Validator" -ForegroundColor Cyan
 Write-Host "================================`n" -ForegroundColor Cyan
 
 # Load English reference

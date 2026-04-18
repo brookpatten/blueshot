@@ -1,6 +1,6 @@
-# Greenshot 1.3 Release Changelogs
+# blueshot 1.3 Release Changelogs
 
-This document contains changelogs for all stable releases in the Greenshot 1.3 series.
+This document contains changelogs for all stable releases in the blueshot 1.3 series.
 
 ---
 
@@ -10,7 +10,7 @@ Released: March 20, 2026
 
 ### Security
 
-**Security Fix**: Fixed a security advisory ([GHSA-f8v9-7fph-fr2j](https://github.com/greenshot/greenshot/security/advisories/GHSA-f8v9-7fph-fr2j)). Thanks to @MarioRL0 for responsibly disclosing the issue with a very detailed and well-analyzed report.
+**Security Fix**: Fixed a security advisory ([GHSA-f8v9-7fph-fr2j](https://github.com/blueshot/blueshot/security/advisories/GHSA-f8v9-7fph-fr2j)). Thanks to @MarioRL0 for responsibly disclosing the issue with a very detailed and well-analyzed report.
 
 ### Bug Fixes
 
@@ -24,17 +24,17 @@ Released: March 20, 2026
 ### Installation Improvements
 
 - Reduces issues caused by leftover files from previous installations
-- Old 1.2 and 1.3 plugin files are now removed before new files are installed (only Greenshot-provided plugins are affected)
+- Old 1.2 and 1.3 plugin files are now removed before new files are installed (only blueshot-provided plugins are affected)
 
 ### Downloads
-- [Installer](https://github.com/greenshot/greenshot/releases/download/v1.3.315/Greenshot-INSTALLER-1.3.315-RELEASE.exe)
-- [Portable ZIP](https://github.com/greenshot/greenshot/releases/download/v1.3.315/Greenshot-PORTABLE-1.3.315-RELEASE.zip)
+- [Installer](https://github.com/blueshot/blueshot/releases/download/v1.3.315/blueshot-INSTALLER-1.3.315-RELEASE.exe)
+- [Portable ZIP](https://github.com/blueshot/blueshot/releases/download/v1.3.315/blueshot-PORTABLE-1.3.315-RELEASE.zip)
 
 ### Technical Details
 - **Security Advisory**: GHSA-f8v9-7fph-fr2j
 - **PR #956** (by @Lakritzator): Stability fixes backported from 1.4 — issues #822, #952, #788, #944
 - **PR #1084** (by @Lakritzator): Remove old plugin files before installation
-- **Full Changelog**: https://github.com/greenshot/greenshot/compare/v1.3.312...v1.3.315
+- **Full Changelog**: https://github.com/blueshot/blueshot/compare/v1.3.312...v1.3.315
 
 ---
 
@@ -47,12 +47,12 @@ Released: January 7, 2026
 Fixed an issue where external commands were not working due to backslash characters being blocked as part of security improvements.
 
 ### Downloads
-- [Installer](https://github.com/greenshot/greenshot/releases/download/v1.3.312/Greenshot-INSTALLER-1.3.312-RELEASE.exe)
-- [Portable ZIP](https://github.com/greenshot/greenshot/releases/download/v1.3.312/Greenshot-PORTABLE-1.3.312-RELEASE.zip)
+- [Installer](https://github.com/blueshot/blueshot/releases/download/v1.3.312/blueshot-INSTALLER-1.3.312-RELEASE.exe)
+- [Portable ZIP](https://github.com/blueshot/blueshot/releases/download/v1.3.312/blueshot-PORTABLE-1.3.312-RELEASE.zip)
 
 ### Technical Details
 - **Issue**: #787 - External Commands Broken due to Backslash Character Being Blocked
-- **Full Changelog**: https://github.com/greenshot/greenshot/compare/v1.3.311...v1.3.312
+- **Full Changelog**: https://github.com/blueshot/blueshot/compare/v1.3.311...v1.3.312
 
 ---
 
@@ -64,15 +64,15 @@ Released: January 7, 2026
 
 This is a critical security update that addresses a security vulnerability.
 
-**Security Fix**: Fixed a security advisory ([GHSA-7hvw-q8q5-gpmj](https://github.com/greenshot/greenshot/security/advisories/GHSA-7hvw-q8q5-gpmj)). Thanks to @lihnucs for responsibly disclosing the issue with a detailed and well-analyzed report.
+**Security Fix**: Fixed a security advisory ([GHSA-7hvw-q8q5-gpmj](https://github.com/blueshot/blueshot/security/advisories/GHSA-7hvw-q8q5-gpmj)). Thanks to @lihnucs for responsibly disclosing the issue with a detailed and well-analyzed report.
 
 ### Downloads
-- [Installer](https://github.com/greenshot/greenshot/releases/download/v1.3.311/Greenshot-INSTALLER-1.3.311-RELEASE.exe)
-- [Portable ZIP](https://github.com/greenshot/greenshot/releases/download/v1.3.311/Greenshot-PORTABLE-1.3.311-RELEASE.zip)
+- [Installer](https://github.com/blueshot/blueshot/releases/download/v1.3.311/blueshot-INSTALLER-1.3.311-RELEASE.exe)
+- [Portable ZIP](https://github.com/blueshot/blueshot/releases/download/v1.3.311/blueshot-PORTABLE-1.3.311-RELEASE.zip)
 
 ### Technical Details
 - **Security Advisory**: GHSA-7hvw-q8q5-gpmj
-- **Full Changelog**: https://github.com/greenshot/greenshot/compare/v1.3.304...v1.3.311
+- **Full Changelog**: https://github.com/blueshot/blueshot/compare/v1.3.304...v1.3.311
 
 ---
 
@@ -82,20 +82,20 @@ Released: October 30, 2025
 
 ### What's New
 
-**Portable Version**: This release introduces an official portable ZIP package, making it easier to run Greenshot without installation.
+**Portable Version**: This release introduces an official portable ZIP package, making it easier to run blueshot without installation.
 
 ### Bug Fixes
 
-Fixed an issue where file associations and launching Greenshot with file arguments didn't work correctly when the application was already running.
+Fixed an issue where file associations and launching blueshot with file arguments didn't work correctly when the application was already running.
 
 ### Downloads
-- [Installer](https://github.com/greenshot/greenshot/releases/download/v1.3.304/Greenshot-INSTALLER-1.3.304-RELEASE.exe)
-- [Portable ZIP](https://github.com/greenshot/greenshot/releases/download/v1.3.304/Greenshot-PORTABLE-1.3.304-RELEASE.zip) ⭐ *NEW!*
+- [Installer](https://github.com/blueshot/blueshot/releases/download/v1.3.304/blueshot-INSTALLER-1.3.304-RELEASE.exe)
+- [Portable ZIP](https://github.com/blueshot/blueshot/releases/download/v1.3.304/blueshot-PORTABLE-1.3.304-RELEASE.zip) ⭐ *NEW!*
 
 ### Technical Details
 - **PR #667**: Portable Zip Release by @Christian-Schulz
 - **Issue #685**: File Association and Launch with File Arguments Not Working When Already Running
-- **Full Changelog**: https://github.com/greenshot/greenshot/compare/v1.3.301...v1.3.304
+- **Full Changelog**: https://github.com/blueshot/blueshot/compare/v1.3.301...v1.3.304
 
 ---
 
@@ -107,14 +107,14 @@ Released: September 16, 2025
 
 This is a critical security update that addresses a security vulnerability.
 
-**Security Fix**: Fixed a security advisory ([GHSA-8f7f-x7ww-xx5w](https://github.com/greenshot/greenshot/security/advisories/GHSA-8f7f-x7ww-xx5w)). Thanks to @RipFran for responsibly disclosing the problem with a very detailed and well-analyzed report and for helping with re-testing.
+**Security Fix**: Fixed a security advisory ([GHSA-8f7f-x7ww-xx5w](https://github.com/blueshot/blueshot/security/advisories/GHSA-8f7f-x7ww-xx5w)). Thanks to @RipFran for responsibly disclosing the problem with a very detailed and well-analyzed report and for helping with re-testing.
 
 ### Downloads
-- [Installer](https://github.com/greenshot/greenshot/releases/download/v1.3.301/Greenshot-INSTALLER-1.3.301-RELEASE.exe)
+- [Installer](https://github.com/blueshot/blueshot/releases/download/v1.3.301/blueshot-INSTALLER-1.3.301-RELEASE.exe)
 
 ### Technical Details
 - **Security Advisory**: GHSA-8f7f-x7ww-xx5w
-- **Full Changelog**: https://github.com/greenshot/greenshot/compare/v1.3.300...v1.3.301
+- **Full Changelog**: https://github.com/blueshot/blueshot/compare/v1.3.300...v1.3.301
 
 ---
 
@@ -127,11 +127,11 @@ Released: August 10, 2025
 Fixed plugin configuration options that were broken in previous 1.3 releases. The `IncludePlugins` and `ExcludePlugins` options from INI files now work correctly again.
 
 ### Downloads
-- [Installer](https://github.com/greenshot/greenshot/releases/download/v1.3.300/Greenshot-INSTALLER-1.3.300-RELEASE.exe)
+- [Installer](https://github.com/blueshot/blueshot/releases/download/v1.3.300/blueshot-INSTALLER-1.3.300-RELEASE.exe)
 
 ### Technical Details
 - **PR #644**: Fix for IncludePlugins and ExcludePlugins options by @Christian-Schulz
-- **Full Changelog**: https://github.com/greenshot/greenshot/compare/v1.3.296...v1.3.300
+- **Full Changelog**: https://github.com/blueshot/blueshot/compare/v1.3.296...v1.3.300
 
 ---
 
@@ -141,7 +141,7 @@ Released: July 26, 2025
 
 ### What's New
 
-**Installation Choice**: You can now choose between installing Greenshot for all users (requires administrator privileges) or just for the current user.
+**Installation Choice**: You can now choose between installing blueshot for all users (requires administrator privileges) or just for the current user.
 
 ### Bug Fixes
 
@@ -150,12 +150,12 @@ Released: July 26, 2025
 - Resolved issues from #546, #611, and #598
 
 ### Downloads
-- [Installer](https://github.com/greenshot/greenshot/releases/download/v1.3.296/Greenshot-INSTALLER-1.3.296-RELEASE.exe)
+- [Installer](https://github.com/blueshot/blueshot/releases/download/v1.3.296/blueshot-INSTALLER-1.3.296-RELEASE.exe)
 
 ### Technical Details
 - **PR #641**: Allow Choice between All-Users (Administrative) and Current-User Installation by @jklingen
 - **Issues Fixed**: #625, #546, #611, #598
-- **Full Changelog**: https://github.com/greenshot/greenshot/compare/v1.3.294...v1.3.296
+- **Full Changelog**: https://github.com/blueshot/blueshot/compare/v1.3.294...v1.3.296
 
 ---
 
@@ -168,11 +168,11 @@ Released: July 16, 2025
 Fixed a critical issue with elevated (administrator) installations where registry keys ended up in the wrong root key.
 
 ### Downloads
-- [Installer](https://github.com/greenshot/greenshot/releases/download/v1.3.292/Greenshot-INSTALLER-1.3.292-RELEASE.exe)
+- [Installer](https://github.com/blueshot/blueshot/releases/download/v1.3.292/blueshot-INSTALLER-1.3.292-RELEASE.exe)
 
 ### Technical Details
 - **Issues Fixed**: #546, #619
-- **Full Changelog**: https://github.com/greenshot/greenshot/compare/v1.3.291...v1.3.292
+- **Full Changelog**: https://github.com/blueshot/blueshot/compare/v1.3.291...v1.3.292
 
 ---
 
@@ -180,7 +180,7 @@ Fixed a critical issue with elevated (administrator) installations where registr
 
 Released: May 23, 2025
 
-**This was the first stable release of Greenshot 1.3 and marked as the final release for the 1.3 series.**
+**This was the first stable release of blueshot 1.3 and marked as the final release for the 1.3 series.**
 
 ### Security
 
@@ -216,9 +216,9 @@ Released: May 23, 2025
 - **Unicode Text Drawing**: Fixed Unicode text rendering issues (#287)
 - **Text Rendering in Containers**: Fixed text rendering inside text/speech bubble containers (#297)
 - **Ellipse and Highlight Duplication**: Fixed duplication bug (#322, #331)
-- **Arrow File Opening**: Fixed error when opening .greenshot files with arrows (#572, #574)
+- **Arrow File Opening**: Fixed error when opening .blueshot files with arrows (#572, #574)
 - **MAPI Detection**: Fixed MAPI detection issue (BUG-2693, #266)
-- **Wine Support**: Fixed issues when running Greenshot via Wine (#262)
+- **Wine Support**: Fixed issues when running blueshot via Wine (#262)
 - **Initial Crop Selection**: Fixed initial crop selection (#407)
 - **Confirm for Drawable Containers**: Added IsConfirmable property for IDrawableContainer (#399)
 - **Resize Hotkey**: Added resize hotkey functionality (#480)
@@ -253,16 +253,16 @@ Released: May 23, 2025
 - @clpo13, @Rukoto, @peterfab9845, @k41c, @Ishmaeel, @Masv-MiR, @svatas, @EricCogen, @5idereal, @erl-mallard, @jdavila71, @jglathe, @FF-Brown, @jairbubbles
 
 ### Downloads
-- [Installer](https://github.com/greenshot/greenshot/releases/download/v1.3.290/Greenshot-INSTALLER-1.3.290-RELEASE.exe)
+- [Installer](https://github.com/blueshot/blueshot/releases/download/v1.3.290/blueshot-INSTALLER-1.3.290-RELEASE.exe)
 
 ### Technical Details
-- **Full Changelog**: https://github.com/greenshot/greenshot/compare/Greenshot-RELEASE-1.2.10.6...v1.3.290
+- **Full Changelog**: https://github.com/blueshot/blueshot/compare/blueshot-RELEASE-1.2.10.6...v1.3.290
 
 ---
 
-## About Greenshot 1.3
+## About blueshot 1.3
 
-Greenshot 1.3 was built on the `release/1.3` branch and received multiple stable releases from May 2025 through March 2026. **Version 1.3.315 (March 20, 2026) is the final stable release of the 1.3 series.** The series introduced significant improvements in:
+blueshot 1.3 was built on the `release/1.3` branch and received multiple stable releases from May 2025 through March 2026. **Version 1.3.315 (March 20, 2026) is the final stable release of the 1.3 series.** The series introduced significant improvements in:
 
 - **Security**: Multiple critical security fixes (CVE-2023-34634, GHSA-8f7f-x7ww-xx5w, GHSA-7hvw-q8q5-gpmj, GHSA-f8v9-7fph-fr2j)
 - **Editor functionality**: Zoom, keyboard shortcuts, better DPI support, and rendering fixes
@@ -273,4 +273,4 @@ Greenshot 1.3 was built on the `release/1.3` branch and received multiple stable
 
 For more information about version management and release processes, see [docs/release-management.md](../release-management.md).
 
-For detailed technical changelogs of all releases including continuous builds, visit the [GitHub Releases page](https://github.com/greenshot/greenshot/releases).
+For detailed technical changelogs of all releases including continuous builds, visit the [GitHub Releases page](https://github.com/blueshot/blueshot/releases).

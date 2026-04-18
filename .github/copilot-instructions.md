@@ -1,8 +1,8 @@
-# Greenshot Copilot Instructions
+# blueshot Copilot Instructions
 
 ## Repository Overview
 
-**Greenshot** is a free, open-source screenshot tool for Windows optimized for productivity. It allows users to capture screenshots, annotate them, and export to various destinations (file, printer, clipboard, email, cloud services).
+**blueshot** is a free, open-source screenshot tool for Windows optimized for productivity. It allows users to capture screenshots, annotate them, and export to various destinations (file, printer, clipboard, email, cloud services).
 
 - **Repository Size**: ~13MB, ~1,100 files
 - **Primary Language**: C# (.NET Framework 4.8.0)
@@ -33,26 +33,26 @@
 
 ### Restore NuGet Packages
 ```powershell
-msbuild src/Greenshot.sln /p:Configuration=Release /restore /t:PrepareForBuild
+msbuild src/blueshot.sln /p:Configuration=Release /restore /t:PrepareForBuild
 ```
 **Time**: ~10-30 seconds  
 **Note**: Run this BEFORE building. Environment variables for API credentials may be needed (see Secrets section).
 
 ### Build Solution
 ```powershell
-msbuild src/Greenshot.sln /p:Configuration=Release /t:Rebuild /v:normal
+msbuild src/blueshot.sln /p:Configuration=Release /t:Rebuild /v:normal
 ```
 **Time**: ~1-3 minutes  
-**Output**: `src/Greenshot/bin/Release/net481/` (main executable and plugins)
+**Output**: `src/blueshot/bin/Release/net481/` (main executable and plugins)
 
 ### Build for Debug
 ```powershell
-msbuild src/Greenshot.sln /p:Configuration=Debug /t:Rebuild /v:normal
+msbuild src/blueshot.sln /p:Configuration=Debug /t:Rebuild /v:normal
 ```
 
 ### Clean Build
 ```powershell
-msbuild src/Greenshot.sln /t:Clean /p:Configuration=Release
+msbuild src/blueshot.sln /t:Clean /p:Configuration=Release
 ```
 
 ### No Automated Tests
@@ -71,29 +71,29 @@ There are NO automated test projects in this repository. Do not attempt to run t
 ### Source Directory (`src/`)
 ```
 src/
-├── Greenshot.sln              # Main solution file
+├── blueshot.sln              # Main solution file
 ├── Directory.Build.props      # Shared MSBuild properties
 ├── Directory.Build.targets    # Shared MSBuild targets (token replacement)
 ├── .editorconfig              # Code style configuration
 ├── version.json               # Nerdbank.GitVersioning config
-├── Greenshot/                 # Main application project
-├── Greenshot.Base/            # Core/shared library
-├── Greenshot.Editor/          # Image editor component
-└── Greenshot.Plugin.*/        # Plugin projects (Box, Dropbox, Imgur, etc.)
+├── blueshot/                 # Main application project
+├── blueshot.Base/            # Core/shared library
+├── blueshot.Editor/          # Image editor component
+└── blueshot.Plugin.*/        # Plugin projects (Box, Dropbox, Imgur, etc.)
 ```
 
 ### Main Application
-- **Entry Point**: `src/Greenshot/GreenshotMain.cs`
-- **Main Form**: `src/Greenshot/Forms/MainForm.cs`
-- **Configuration**: `src/Greenshot/Configuration/`
-- **Destination Handlers**: `src/Greenshot/Destinations/` (clipboard, email, file, etc.)
-- **Capture Helpers**: `src/Greenshot/Helpers/CaptureHelper.cs`
+- **Entry Point**: `src/blueshot/blueshotMain.cs`
+- **Main Form**: `src/blueshot/Forms/MainForm.cs`
+- **Configuration**: `src/blueshot/Configuration/`
+- **Destination Handlers**: `src/blueshot/Destinations/` (clipboard, email, file, etc.)
+- **Capture Helpers**: `src/blueshot/Helpers/CaptureHelper.cs`
 
 ### Plugins Architecture
 Each plugin follows a consistent structure:
-- Located in `src/Greenshot.Plugin.{Name}/`
+- Located in `src/blueshot.Plugin.{Name}/`
 - Has language files in `Languages/language_{plugin}*.xml`
-- Build output goes to `src/Greenshot/bin/{Configuration}/net481/Plugins/{PluginName}/`
+- Build output goes to `src/blueshot/bin/{Configuration}/net481/Plugins/{PluginName}/`
 - Post-build events (in Directory.Build.props) copy plugins to main app output
 
 ### Key Configuration Files
@@ -109,17 +109,17 @@ Each plugin follows a consistent structure:
 
 **Build Process**:
 1. **Setup**: Windows runner, MSBuild, .NET 7.x SDK
-2. **Restore**: `msbuild src/Greenshot.sln /p:Configuration=Release /restore /t:PrepareForBuild`
-3. **Build**: `msbuild src/Greenshot.sln /p:Configuration=Release /t:Rebuild /v:normal`
-4. **Package Installer**: Copies from `installer/Greenshot-INSTALLER-*.exe`
+2. **Restore**: `msbuild src/blueshot.sln /p:Configuration=Release /restore /t:PrepareForBuild`
+3. **Build**: `msbuild src/blueshot.sln /p:Configuration=Release /t:Rebuild /v:normal`
+4. **Package Installer**: Copies from `installer/blueshot-INSTALLER-*.exe`
 5. **Package Portable**: Runs `prepare-portable.ps1`, creates ZIP
 6. **Deploy**: Creates GitHub release with installer and portable ZIP
 
 **Important**: CI requires GitHub secrets for OAuth API credentials (Box, Dropbox, Flickr, Imgur, Photobucket, Picasa).
 
 ### Build Artifacts
-- **Installer**: `installer/Greenshot-INSTALLER-{version}-RELEASE.exe`
-- **Portable**: `Greenshot-PORTABLE-{version}-UNSTABLE-UNSIGNED.zip`
+- **Installer**: `installer/blueshot-INSTALLER-{version}-RELEASE.exe`
+- **Portable**: `blueshot-PORTABLE-{version}-UNSTABLE-UNSIGNED.zip`
 
 ## Coding Conventions
 
@@ -167,26 +167,26 @@ $env:Box13_ClientSecret = "your_secret"
 
 ### Issue 4: Installer Not Built
 **Symptoms**: No .exe in `installer/` after build  
-**Cause**: Installer creation is part of Greenshot project's post-build using Inno Setup (Tools.InnoSetup NuGet package)  
+**Cause**: Installer creation is part of blueshot project's post-build using Inno Setup (Tools.InnoSetup NuGet package)  
 **Solution**: Build succeeds without installer; use CI workflow or manual build-and-deploy.ps1 for full release
 
 ## Making Code Changes
 
 ### Typical Workflow
-1. **Restore**: `msbuild src/Greenshot.sln /p:Configuration=Debug /restore /t:PrepareForBuild`
-2. **Build**: `msbuild src/Greenshot.sln /p:Configuration=Debug /t:Build /v:minimal`
+1. **Restore**: `msbuild src/blueshot.sln /p:Configuration=Debug /restore /t:PrepareForBuild`
+2. **Build**: `msbuild src/blueshot.sln /p:Configuration=Debug /t:Build /v:minimal`
 3. **Make Changes**: Edit C# files following conventions
-4. **Rebuild**: `msbuild src/Greenshot.sln /p:Configuration=Debug /t:Rebuild /v:minimal` (incremental)
-5. **Test Manually**: Run `src/Greenshot/bin/Debug/net481/Greenshot.exe`
+4. **Rebuild**: `msbuild src/blueshot.sln /p:Configuration=Debug /t:Rebuild /v:minimal` (incremental)
+5. **Test Manually**: Run `src/blueshot/bin/Debug/net481/blueshot.exe`
 
 ### Adding New Features
-- Core functionality: `src/Greenshot.Base/` or `src/Greenshot/`
-- Editor features: `src/Greenshot.Editor/`
-- New plugins: Create new `Greenshot.Plugin.{Name}` project following existing plugin structure
-- UI changes: Modify Forms in `src/Greenshot/Forms/` or `src/Greenshot.Editor/Forms/`
+- Core functionality: `src/blueshot.Base/` or `src/blueshot/`
+- Editor features: `src/blueshot.Editor/`
+- New plugins: Create new `blueshot.Plugin.{Name}` project following existing plugin structure
+- UI changes: Modify Forms in `src/blueshot/Forms/` or `src/blueshot.Editor/Forms/`
 
 ### Modifying Plugins
-Each plugin in `src/Greenshot.Plugin.*/` is self-contained. Changes are automatically copied to main output via post-build events.
+Each plugin in `src/blueshot.Plugin.*/` is self-contained. Changes are automatically copied to main output via post-build events.
 
 ## Translation Tasks
 
@@ -212,7 +212,7 @@ The translation-manager agent is a specialized expert with comprehensive knowled
 ## Validation Checklist
 
 Before submitting changes:
-- [ ] Build succeeds: `msbuild src/Greenshot.sln /p:Configuration=Release /t:Rebuild`
+- [ ] Build succeeds: `msbuild src/blueshot.sln /p:Configuration=Release /t:Rebuild`
 - [ ] Code follows style conventions (see .editorconfig and CONTRIBUTING.md)
 - [ ] No new TODO/HACK/FIXME without justification
 - [ ] Manual testing of affected features (no automated tests available)
@@ -228,4 +228,4 @@ Before submitting changes:
 
 ## Trust These Instructions
 
-These instructions have been validated against the actual repository structure and build process. When information here conflicts with generic .NET knowledge, trust these specific instructions for Greenshot. Only search further if encountering undocumented errors.
+These instructions have been validated against the actual repository structure and build process. When information here conflicts with generic .NET knowledge, trust these specific instructions for blueshot. Only search further if encountering undocumented errors.

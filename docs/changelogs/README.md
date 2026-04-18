@@ -1,6 +1,6 @@
-# Greenshot Changelogs
+# blueshot Changelogs
 
-This directory contains comprehensive changelogs for all Greenshot releases.
+This directory contains comprehensive changelogs for all blueshot releases.
 
 ## Available Changelogs
 
@@ -22,16 +22,16 @@ This directory contains comprehensive changelogs for all Greenshot releases.
 ## Quick Navigation
 
 ### Latest Stable Release
-**[Greenshot 1.3.315](CHANGELOG-1.3.md#version-1315-march-20-2026)** (March 20, 2026)
+**[blueshot 1.3.315](CHANGELOG-1.3.md#version-1315-march-20-2026)** (March 20, 2026)
 - Critical security fix (GHSA-f8v9-7fph-fr2j), stability improvements, and installation cleanup
-- [Download Installer](https://github.com/greenshot/greenshot/releases/download/v1.3.315/Greenshot-INSTALLER-1.3.315-RELEASE.exe)
-- [Download Portable](https://github.com/greenshot/greenshot/releases/download/v1.3.315/Greenshot-PORTABLE-1.3.315-RELEASE.zip)
+- [Download Installer](https://github.com/blueshot/blueshot/releases/download/v1.3.315/blueshot-INSTALLER-1.3.315-RELEASE.exe)
+- [Download Portable](https://github.com/blueshot/blueshot/releases/download/v1.3.315/blueshot-PORTABLE-1.3.315-RELEASE.zip)
 
 ### Latest Development Build
-**[Greenshot 1.4.108](CHANGELOG-1.4.md)** (March 14, 2026)
+**[blueshot 1.4.108](CHANGELOG-1.4.md)** (March 14, 2026)
 - Windows Graphics Capture API (Beta) for higher-quality captures
 - ⚠️ Unstable/unsigned - for testing only
-- [View all 1.4 builds](https://github.com/greenshot/greenshot/releases)
+- [View all 1.4 builds](https://github.com/blueshot/blueshot/releases)
 
 ## Changelog Format
 
@@ -109,7 +109,7 @@ Our changelogs follow these principles:
 ### By Issue/PR
 - Each changelog entry includes links to GitHub issues and pull requests
 - Use the GitHub repository's search to find specific issues
-- Cross-reference with [GitHub Releases](https://github.com/greenshot/greenshot/releases)
+- Cross-reference with [GitHub Releases](https://github.com/blueshot/blueshot/releases)
 
 ### By Date
 - Changelogs are organized chronologically within each version series
@@ -118,13 +118,13 @@ Our changelogs follow these principles:
 ## Related Documentation
 
 - [Release Management](../release-management.md) - How releases are built and distributed
-- [Contributing Guidelines](../../CONTRIBUTING.md) - How to contribute to Greenshot
-- [GitHub Releases](https://github.com/greenshot/greenshot/releases) - Download releases and see GitHub-generated changelogs
-- [Version History Website](https://getgreenshot.org/version-history/) - Public-facing version history
+- [Contributing Guidelines](../../CONTRIBUTING.md) - How to contribute to blueshot
+- [GitHub Releases](https://github.com/blueshot/blueshot/releases) - Download releases and see GitHub-generated changelogs
+- [Version History Website](https://getblueshot.org/version-history/) - Public-facing version history
 
 ## Changelog Maintenance
 
-These changelogs are maintained by the Greenshot team and community:
+These changelogs are maintained by the blueshot team and community:
 
 - **1.3 Changelogs**: Generated from GitHub releases for stable builds
 - **1.4 Changelogs**: Updated regularly with continuous build information
@@ -146,6 +146,6 @@ When creating new releases:
 
 ---
 
-*For questions about changelogs or releases, please open an issue on [GitHub](https://github.com/greenshot/greenshot/issues).*
+*For questions about changelogs or releases, please open an issue on [GitHub](https://github.com/blueshot/blueshot/issues).*
 
 *Last updated: March 20, 2026*

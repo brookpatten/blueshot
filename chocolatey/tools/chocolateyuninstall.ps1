@@ -1,4 +1,4 @@
-$packageName = "Greenshot"
+$packageName = "blueshot"
 $installerType = "exe"
 
 
