@@ -40,7 +40,7 @@ jobs:
 
     - name: Restore NuGet packages 
       run: msbuild src/blueshot.sln /p:Configuration=Release /restore /t:PrepareForBuild
-      env:
+        # env:
         # Box13_ClientId: ${{ secrets.Box13_ClientId }}
         # Box13_ClientSecret: ${{ secrets.Box13_ClientSecret }}
         # DropBox13_ClientId: ${{ secrets.DropBox13_ClientId }}
@@ -56,7 +56,7 @@ jobs:
 
     - name: Build and package
       run: msbuild src/blueshot.sln /p:Configuration=Release /t:Rebuild /v:normal
-      env:
+        # env:
         # Box13_ClientId: ${{ secrets.Box13_ClientId }}
         # Box13_ClientSecret: ${{ secrets.Box13_ClientSecret }}
         # DropBox13_ClientId: ${{ secrets.DropBox13_ClientId }}

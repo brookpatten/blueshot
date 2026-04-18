@@ -1,5 +1,5 @@
 <Project>
-  <UsingTask TaskName="ApplyTokenReplacements" TaskFactory="RoslynCodeTaskFactory" AssemblyName="Microsoft.Build.Tasks.Core">
+  <!-- <UsingTask TaskName="ApplyTokenReplacements" TaskFactory="RoslynCodeTaskFactory" AssemblyName="Microsoft.Build.Tasks.Core">
     <ParameterGroup>
       <InputLines ParameterType="Microsoft.Build.Framework.ITaskItem[]" Required="true" />
       <Tokens ParameterType="Microsoft.Build.Framework.ITaskItem[]" Required="true" />
@@ -32,7 +32,7 @@
       ]]>
       </Code>
     </Task>
-  </UsingTask>
+  </UsingTask> -->
 
   <PropertyGroup>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
