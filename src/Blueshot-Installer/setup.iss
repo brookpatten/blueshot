@@ -87,14 +87,14 @@ Source: {#PluginDir}\blueshot.Plugin.Jira\*Jira*.dll; DestDir: {app}\Plugins\Jir
 Source: {#PluginDir}\blueshot.Plugin.Jira\Dapplo.HttpExtensions.WinForms.dll; DestDir: {app}\Plugins\Jira; Components: plugins\jira; Flags: {#DefaultInstallFlags};
 Source: {#SolutionDir}\blueshot.Plugin.Jira\Languages\language_jira*.xml; DestDir: {app}\Languages\Plugins\Jira; Components: plugins\jira; Flags: {#DefaultInstallFlags};
 ;Imgur Plugin
-Source: {#PluginDir}\blueshot.Plugin.Imgur\blueshot.Plugin.Imgur.dll; DestDir: {app}\Plugins\Imgur; Components: plugins\imgur; Flags: {#DefaultInstallFlags};
-Source: {#SolutionDir}\blueshot.Plugin.Imgur\Languages\language_imgur*.xml; DestDir: {app}\Languages\Plugins\Imgur; Components: plugins\imgur; Flags: {#DefaultInstallFlags};
+;Source: {#PluginDir}\blueshot.Plugin.Imgur\blueshot.Plugin.Imgur.dll; DestDir: {app}\Plugins\Imgur; Components: plugins\imgur; Flags: {#DefaultInstallFlags};
+;Source: {#SolutionDir}\blueshot.Plugin.Imgur\Languages\language_imgur*.xml; DestDir: {app}\Languages\Plugins\Imgur; Components: plugins\imgur; Flags: {#DefaultInstallFlags};
 ;Box Plugin
-Source: {#PluginDir}\blueshot.Plugin.Box\blueshot.Plugin.Box.dll; DestDir: {app}\Plugins\Box; Components: plugins\box; Flags: {#DefaultInstallFlags};
-Source: {#SolutionDir}\blueshot.Plugin.Box\Languages\language_box*.xml; DestDir: {app}\Languages\Plugins\Box; Components: plugins\box; Flags: {#DefaultInstallFlags};
+;Source: {#PluginDir}\blueshot.Plugin.Box\blueshot.Plugin.Box.dll; DestDir: {app}\Plugins\Box; Components: plugins\box; Flags: {#DefaultInstallFlags};
+;Source: {#SolutionDir}\blueshot.Plugin.Box\Languages\language_box*.xml; DestDir: {app}\Languages\Plugins\Box; Components: plugins\box; Flags: {#DefaultInstallFlags};
 ;DropBox Plugin
-Source: {#PluginDir}\blueshot.Plugin.DropBox\blueshot.Plugin.DropBox.dll; DestDir: {app}\Plugins\DropBox; Components: plugins\dropbox; Flags: {#DefaultInstallFlags};
-Source: {#SolutionDir}\blueshot.Plugin.DropBox\Languages\language_dropbox*.xml; DestDir: {app}\Languages\Plugins\DropBox; Components: plugins\dropbox; Flags: {#DefaultInstallFlags};
+;Source: {#PluginDir}\blueshot.Plugin.DropBox\blueshot.Plugin.DropBox.dll; DestDir: {app}\Plugins\DropBox; Components: plugins\dropbox; Flags: {#DefaultInstallFlags};
+;Source: {#SolutionDir}\blueshot.Plugin.DropBox\Languages\language_dropbox*.xml; DestDir: {app}\Languages\Plugins\DropBox; Components: plugins\dropbox; Flags: {#DefaultInstallFlags};
 ;Confluence Plugin
 Source: {#PluginDir}\blueshot.Plugin.Confluence\blueshot.Plugin.Confluence.dll; DestDir: {app}\Plugins\Confluence; Components: plugins\confluence; Flags: {#DefaultInstallFlags};
 Source: {#SolutionDir}\blueshot.Plugin.Confluence\Languages\language_confluence*.xml; DestDir: {app}\Languages\Plugins\Confluence; Components: plugins\confluence; Flags: {#DefaultInstallFlags};
@@ -252,12 +252,12 @@ viVN=Việt
 zhCN=简体中文
 zhTW=繁體中文
 
-en.box=Box plug-in
+;en.box=Box plug-in
 en.confluence=Confluence plug-in
 en.default=Default installation
-en.dropbox=Dropbox plug-in
+;en.dropbox=Dropbox plug-in
 en.externalcommand=Open with external command plug-in
-en.imgur=Imgur plug-in (See: https://imgur.com)
+;en.imgur=Imgur plug-in (See: https://imgur.com)
 en.jira=Jira plug-in
 en.language=Additional languages
 en.office=Microsoft Office plug-in
@@ -272,7 +272,7 @@ en.disablewin11snippingtool=Disable Win11 default PrtScr snipping tool
 de.confluence=Confluence Plug-in
 de.default=Standard installation
 de.externalcommand=Externes Kommando Plug-in
-de.imgur=Imgur Plug-in (Siehe: https://imgur.com)
+;de.imgur=Imgur Plug-in (Siehe: https://imgur.com)
 de.jira=Jira Plug-in
 de.language=Zusätzliche Sprachen
 de.office=Microsoft Office Plug-in
@@ -284,7 +284,7 @@ de.disablewin11snippingtool=Deaktiviere das Standard Windows 11 Snipping Tool au
 es.confluence=Extensión para Confluence
 es.default=${default}
 es.externalcommand=Extensión para abrir con programas externos
-es.imgur=Extensión para Imgur (Ver https://imgur.com)
+;es.imgur=Extensión para Imgur (Ver https://imgur.com)
 es.jira=Extensión para Jira
 es.language=Idiomas adicionales
 es.optimize=Optimizando rendimiento; por favor, espera.
@@ -294,7 +294,7 @@ es.startup=Lanzar {#ExeName} al iniciarse Windows
 fi.confluence=Confluence-liitännäinen
 fi.default=${default}
 fi.externalcommand=Avaa Ulkoinen komento-liitännäisellä
-fi.imgur=Imgur-liitännäinen (Katso: https://imgur.com)
+;fi.imgur=Imgur-liitännäinen (Katso: https://imgur.com)
 fi.jira=Jira-liitännäinen
 fi.language=Lisäkielet
 fi.office=Microsoft-Office-liitännäinen
@@ -305,7 +305,7 @@ fi.startup=Käynnistä {#ExeName} Windowsin käynnistyessä
 fr.confluence=Greffon Confluence
 fr.default=${default}
 fr.externalcommand=Ouvrir avec le greffon de commande externe
-fr.imgur=Greffon Imgur (Voir: https://imgur.com)
+;fr.imgur=Greffon Imgur (Voir: https://imgur.com)
 fr.jira=Greffon Jira
 fr.language=Langues additionnelles
 fr.office=Greffon Microsoft Office
@@ -313,12 +313,12 @@ fr.optimize=Optimisation des performances, Ceci peut prendre un certain temps.
 fr.startblueshot=Démarrer {#ExeName}
 fr.startup=Lancer {#ExeName} au démarrage de Windows
 
-it.box=Plugin Box
+;it.box=Plugin Box
 it.confluence=Plugin Confluence
 it.default=Installazione predefinita
-it.dropbox=Plugin Dropbox
+;it.dropbox=Plugin Dropbox
 it.externalcommand=Apri con comando esterno plugin
-it.imgur=Plugin Imgur (vedi: https://imgur.com)
+;it.imgur=Plugin Imgur (vedi: https://imgur.com)
 it.jira=Plugin Jira
 it.language=Lingue aggiuntive
 it.office=Plugin Microsoft Office
@@ -368,7 +368,7 @@ it.zhTW=Cinese (Taiwan)
 lt.confluence=Confluence spraudnis
 lt.default=${default}
 lt.externalcommand=Pielāgotu darbību spraudnis
-lt.imgur=Imgur spraudnis (Vairāk šeit: https://imgur.com)
+;lt.imgur=Imgur spraudnis (Vairāk šeit: https://imgur.com)
 lt.jira=Jira spraudnis
 lt.language=Papildus valodas
 lt.office=Microsoft Office spraudnis
@@ -379,7 +379,7 @@ lt.startup=Palaist {#ExeName} uzsākot darbus
 lt.confluence=Confluence spraudnis
 lt.default=${default}
 lt.externalcommand=Pielāgotu darbību spraudnis
-lt.imgur=Imgur spraudnis (Vairāk šeit: https://imgur.com)
+;lt.imgur=Imgur spraudnis (Vairāk šeit: https://imgur.com)
 lt.jira=Jira spraudnis
 lt.language=Papildus valodas
 lt.office=Microsoft Office spraudnis
@@ -390,7 +390,7 @@ lt.startup=Palaist {#ExeName} uzsākot darbus
 nl.confluence=Confluence plug-in
 nl.default=Standaardinstallatie
 nl.externalcommand=Openen met extern commando plug-in
-nl.imgur=Imgur plug-in (zie: https://imgur.com)
+;nl.imgur=Imgur plug-in (zie: https://imgur.com)
 nl.jira=Jira plug-in
 nl.language=Extra talen
 nl.office=Microsoft Office plug-in
@@ -401,7 +401,7 @@ nl.startup={#ExeName} automatisch starten met Windows
 nn.confluence=Confluence-tillegg
 nn.default=Default installation
 nn.externalcommand=Tillegg for å opne med ekstern kommando
-nn.imgur=Imgur-tillegg (sjå https://imgur.com)
+;nn.imgur=Imgur-tillegg (sjå https://imgur.com)
 nn.jira=Jira-tillegg
 nn.language=Andre språk
 nn.office=Microsoft Office Tillegg
@@ -412,7 +412,7 @@ nn.startup=Start {#ExeName} når Windows startar
 ru.confluence=Плагин Confluence
 ru.default=${default}
 ru.externalcommand=Открыть с плагином с помощью внешней команды
-ru.imgur=Плагин Imgur (смотрите https://imgur.com/)
+;ru.imgur=Плагин Imgur (смотрите https://imgur.com/)
 ru.jira=Плагин Jira
 ru.language=Дополнительные языки
 ru.office=Плагин Microsoft Office
@@ -423,7 +423,7 @@ ru.startup=Запускать {#ExeName} при старте Windows
 sr.confluence=Прикључак за Конфлуенс
 sr.default=${default}
 sr.externalcommand=Отвори са прикључком за спољне наредбе
-sr.imgur=Прикључак за Имиџер (https://imgur.com)
+;sr.imgur=Прикључак за Имиџер (https://imgur.com)
 sr.jira=Прикључак за Џиру
 sr.language=Додатни језици
 sr.optimize=Оптимизујем перформансе…
@@ -432,19 +432,19 @@ sr.startup=Покрени програм са системом
 
 sv.confluence=Confluence-insticksprogram
 sv.externalcommand=Öppna med externt kommando-insticksprogram
-sv.imgur=Imgur-insticksprogram (Se: https://imgur.com)
+;sv.imgur=Imgur-insticksprogram (Se: https://imgur.com)
 sv.jira=Jira-insticksprogram
 sv.language=Ytterligare språk
 sv.optimize=Optimerar prestanda, detta kan ta en stund.
 sv.startblueshot=Starta {#ExeName}
 sv.startup=Starta {#ExeName} med Windows
 
-tr.box=Box eklentisi
+;tr.box=Box eklentisi
 tr.confluence=Confluence eklentisi
 tr.default=Varsayılan kurulum
-tr.dropbox=Dropbox eklentisi
+;tr.dropbox=Dropbox eklentisi
 tr.externalcommand=Harici komut eklentisiyle aç
-tr.imgur=Imgur eklentisi (Bkz: https://imgur.com)
+;tr.imgur=Imgur eklentisi (Bkz: https://imgur.com)
 tr.jira=Jira eklentisi
 tr.language=Ek diller
 tr.office=Microsoft Office eklentisi
@@ -459,7 +459,7 @@ tr.disablewin11snippingtool=Win11 varsayılan ekran alıntısı aracını devre 
 uk.confluence=Плагін Confluence
 uk.default=${default}
 uk.externalcommand=Плагін запуску зовнішньої команди
-uk.imgur=Плагін Imgur (див.: https://imgur.com)
+;uk.imgur=Плагін Imgur (див.: https://imgur.com)
 uk.jira=Плагін Jira
 uk.language=Додаткові мови
 uk.optimize=Оптимізація продуктивності, це може забрати час.
@@ -469,7 +469,7 @@ uk.startup=Запускати {#ExeName} під час запуску Windows
 cn.confluence=Confluence插件
 cn.default=${default}
 cn.externalcommand=使用外部命令打开插件
-cn.imgur=Imgur插件( (请访问： https://imgur.com))
+;cn.imgur=Imgur插件( (请访问： https://imgur.com))
 cn.jira=Jira插件
 cn.language=其它语言
 cn.optimize=正在优化性能，这可能需要一点时间。
@@ -485,11 +485,11 @@ Name: "custom"; Description: "{code:CustomInstall}"; Flags: iscustom
 [Components]
 Name: "disablesnippingtool"; Description: {cm:disablewin11snippingtool}; Flags: disablenouninstallwarning; Types: default full custom
 Name: "blueshot"; Description: "blueshot"; Types: default full compact custom; Flags: fixed
-Name: "plugins\box"; Description: {cm:box}; Types: full custom; Flags: disablenouninstallwarning
+;Name: "plugins\box"; Description: {cm:box}; Types: full custom; Flags: disablenouninstallwarning
 Name: "plugins\confluence"; Description: {cm:confluence}; Types: full custom; Flags: disablenouninstallwarning
-Name: "plugins\dropbox"; Description: {cm:dropbox}; Types: full custom; Flags: disablenouninstallwarning
+;Name: "plugins\dropbox"; Description: {cm:dropbox}; Types: full custom; Flags: disablenouninstallwarning
 Name: "plugins\externalcommand"; Description: {cm:externalcommand}; Types: full custom; Flags: disablenouninstallwarning
-Name: "plugins\imgur"; Description: {cm:imgur}; Types: full custom; Flags: disablenouninstallwarning
+;Name: "plugins\imgur"; Description: {cm:imgur}; Types: full custom; Flags: disablenouninstallwarning
 Name: "plugins\jira"; Description: {cm:jira}; Types: full custom; Flags: disablenouninstallwarning
 Name: "plugins\office"; Description: {cm:office}; Types: default full custom; Flags: disablenouninstallwarning
 Name: "languages"; Description: {cm:language}; Types: full custom; Flags: disablenouninstallwarning
