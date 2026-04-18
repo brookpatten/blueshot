@@ -11,10 +11,10 @@ $ReleaseToken = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([Syste
 
 # Variables
 $RepoPath = "."  # Replace with your local repo path
-$BuildArtifactsPath = "$RepoPath\src\blueshot\bin\Release\net481"
+$BuildArtifactsPath = "$RepoPath\src\Blueshot\bin\Release\net481"
 $ArtifactsPath = "$RepoPath\artifacts"
 $PortableFilesPath = "$ArtifactsPath\portable-files"
-$SolutionFile = "$RepoPath\src\blueshot.sln"
+$SolutionFile = "$RepoPath\src\Blueshot\Blueshot.sln"
 
 # Clear Artifacts Directory
 Remove-Item -Path "$ArtifactsPath\*" -Recurse -Force

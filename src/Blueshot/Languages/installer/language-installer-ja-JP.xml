@@ -7,7 +7,7 @@
 		<resource name="confluence">Confluence プラグイン</resource>
 		<resource name="externalcommand">Open with external command プラグイン</resource>
 		<resource name="ocr">OCR プラグイン (Microsoft Office Document Imaging (MODI) が必要)</resource>
-		<resource name="imgur">Imgur プラグイン (参照: https://imgur.com)</resource>
+		<!-- <resource name="imgur">Imgur プラグイン (参照: https://imgur.com)</resource> -->
 		<resource name="language">追加の言語</resource>
 		<resource name="optimize">パフォーマンスを最適化しています。これにはしばらく時間がかかる場合があります。</resource>
 	</resources>

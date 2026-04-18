@@ -3,7 +3,7 @@
 	<resources>
 		<resource name="confluence">Confluence-tillegg</resource>
 		<resource name="externalcommand">Tillegg for å opne med ekstern kommando</resource>
-		<resource name="imgur">Imgur-tillegg (sjå https://imgur.com)</resource>
+		<!-- <resource name="imgur">Imgur-tillegg (sjå https://imgur.com)</resource> -->
 		<resource name="jira">Jira-tillegg</resource>
 		<resource name="language">Andre språk</resource>
 		<resource name="ocr">OCR-tillegg (krev Microsoft Office Document Imaging (MODI))</resource>
